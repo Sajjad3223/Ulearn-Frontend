@@ -1,0 +1,501 @@
+.btn {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  -webkit-transition: background-color 0.3s,-webkit-box-shadow 0.3s;
+  transition: background-color 0.3s,-webkit-box-shadow 0.3s;
+  transition: background-color 0.3s,box-shadow 0.3s;
+  transition: background-color 0.3s,box-shadow 0.3s,-webkit-box-shadow 0.3s;
+  position: relative;
+  text-align: center;
+}
+
+.btn.btn-primary {
+  background-color: #0632CC;
+}
+
+.btn.btn-primary-gradient {
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(30%, #4E75FF), to(#0632CC));
+  background-image: linear-gradient(to right bottom, #4E75FF 30%, #0632CC);
+  background-size: cover;
+  -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+}
+
+.btn.btn-primary-gradient:hover {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.left {
+  margin-right: auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  background-image: url(../imgs/SimpleShiny.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  scroll-behavior: smooth;
+  font-family: 'vazir fd';
+}
+
+body {
+  width: 100vw;
+  background-image: url(../imgs/SimpleShiny.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  direction: rtl;
+  overflow-x: hidden;
+  padding: 1em 0;
+}
+
+nav {
+  width: 100%;
+}
+
+nav ul {
+  width: 1200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav ul li {
+  margin: 0 1em;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  background-image: -webkit-gradient(linear, left top, right top, from(blue), to(red));
+  background-image: linear-gradient(90deg, blue, red);
+  background-size: 0% 3px;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+nav ul li a img {
+  width: 200px;
+}
+
+nav ul li a:hover {
+  background-size: 100% 3px;
+}
+
+nav ul li:last-child {
+  margin-right: auto;
+}
+
+nav ul li:last-child a {
+  background-image: none;
+}
+
+section {
+  height: 90vh;
+  width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section > div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+}
+
+section.one > div {
+  margin: 0;
+}
+
+section.one > div > div:first-child {
+  width: 50%;
+}
+
+section.one > div > div:first-child h2 span {
+  color: #6586FD;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+section.one > div > div:first-child * {
+  margin: 1em 0;
+}
+
+section.one > div > div:first-child p {
+  margin-bottom: 4em;
+}
+
+section.one > div > div:first-child a {
+  padding: 1.5em 5em;
+  border-radius: 1em;
+}
+
+section.one > div > div:last-of-type {
+  position: relative;
+  width: 40%;
+  margin-right: auto;
+  margin-left: 4em;
+}
+
+section.one > div > div:last-of-type * {
+  position: absolute;
+}
+
+section.one > div > div:last-of-type img:nth-child(3) {
+  -webkit-transform: rotate(-40deg);
+          transform: rotate(-40deg);
+  left: -7em;
+}
+
+section.one > div > div:last-of-type img:nth-child(4) {
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
+  right: -4em;
+  bottom: 0;
+}
+
+section.one > div a.goDown {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+}
+
+section.two {
+  height: 90vh;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+section.two > div {
+  margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+section.two > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.two > div > div strong {
+  margin: 2em 0;
+}
+
+section.three > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+section.three > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section.three > div > div > div {
+  width: 160px;
+  height: 160px;
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(30%, #4E75FF), to(#0632CC));
+  background-image: linear-gradient(to right bottom, #4E75FF 30%, #0632CC);
+  background-size: cover;
+  border-radius: 50%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+section.three > div > div h4 {
+  margin: 1.5em 0;
+}
+
+section.three > div > div ul {
+  margin-right: 3em;
+}
+
+section.four > div, section.five > div {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.four > div > div.image, section.five > div > div.image {
+  width: 40%;
+  position: relative;
+}
+
+section.four > div > div.image img, section.five > div > div.image img {
+  position: absolute;
+  top: 0;
+}
+
+section.four > div > div.content, section.five > div > div.content {
+  width: 50%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.four > div > div.content p, section.five > div > div.content p {
+  font-size: 28px;
+}
+
+section.four > div > div.content p .title, section.five > div > div.content p .title {
+  color: yellow;
+  font-size: 30px;
+}
+
+section.four > div > div.content p .ulearn-text, section.five > div > div.content p .ulearn-text {
+  color: dodgerblue;
+  font-weight: bolder;
+}
+
+section.four > div > div.content a, section.five > div > div.content a {
+  margin-top: 2em;
+  padding: 1.5em 4em;
+  border-radius: 1em;
+}
+
+section.six {
+  width: 100vw;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 5em;
+}
+
+section.six > svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+section.six h3, section.six a, section.six footer {
+  z-index: 5;
+}
+
+section.six h3 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+section.six > a {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+section.six footer {
+  width: 90vw;
+  margin: auto;
+}
+
+footer {
+  border-radius: 1em;
+  border: #4A71FC solid 5px;
+  margin: 1em 0;
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer > div {
+    width: 100% !important;
+  }
+}
+
+footer .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+
+footer .right .subscribe {
+  width: 100%;
+  position: relative;
+  height: 50px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+footer .right .subscribe input {
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
+  background-color: #0B2037;
+  padding: 1em;
+  border: none;
+  outline: none;
+  border-radius: 0.5em;
+  margin: 0 1em;
+  padding-right: 4em;
+  color: #fff;
+  font-family: 'vazir fd';
+}
+
+footer .right .subscribe svg, footer .right .subscribe button {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+footer .right .subscribe svg {
+  right: 1.5em;
+  opacity: 0.7;
+}
+
+footer .right .subscribe button {
+  left: 2em;
+  cursor: pointer;
+  font-family: 'vazir fd';
+}
+
+footer .right div:last-child {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+footer .right div:last-child ul li {
+  margin: 5px 0;
+}
+
+footer .right div:last-child ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+footer .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  footer .left {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  footer .left h4 {
+    width: 100% !important;
+    text-align: center;
+    margin: 1em !important;
+  }
+}
+
+footer .left img {
+  max-width: 200px;
+  border-radius: 1em;
+}
+
+footer .left .socialNetworks {
+  margin: 1em 0;
+}
+
+footer .left .socialNetworks a {
+  margin: 0 0.5em;
+}
+
+footer .left h4 {
+  margin: 0;
+}
+/*# sourceMappingURL=aboutus.css.map */

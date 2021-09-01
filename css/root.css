@@ -1,1 +1,40 @@
-/* No CSS *//*# sourceMappingURL=root.css.map */
+.btn {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  -webkit-transition: background-color 0.3s,-webkit-box-shadow 0.3s;
+  transition: background-color 0.3s,-webkit-box-shadow 0.3s;
+  transition: background-color 0.3s,box-shadow 0.3s;
+  transition: background-color 0.3s,box-shadow 0.3s,-webkit-box-shadow 0.3s;
+  position: relative;
+  text-align: center;
+}
+
+.btn.btn-primary {
+  background-color: #0632CC;
+}
+
+.btn.btn-primary-gradient {
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(30%, #4E75FF), to(#0632CC));
+  background-image: linear-gradient(to right bottom, #4E75FF 30%, #0632CC);
+  background-size: cover;
+  -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+}
+
+.btn.btn-primary-gradient:hover {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.left {
+  margin-right: auto;
+}
+/*# sourceMappingURL=root.css.map */
