@@ -4,11 +4,10 @@
           appearance: none;
   border: none;
   outline: none;
-  background-color: transparent;
   color: #fff;
   text-decoration: none;
   border-radius: 0.5em;
-  padding: 0.5em 1em;
+  padding: 0.5em;
   -webkit-transition: background-color 0.3s,-webkit-box-shadow 0.3s;
   transition: background-color 0.3s,-webkit-box-shadow 0.3s;
   transition: background-color 0.3s,box-shadow 0.3s;
@@ -17,25 +16,34 @@
   text-align: center;
 }
 
+.btn:hover {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn .btn-link {
+  background-color: transparent;
+  color: #6A62FE !important;
+}
+
 .btn.btn-primary {
-  background-color: #0632CC;
+  background-color: #6A62FE;
 }
 
-.btn.btn-primary-gradient {
-  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(30%, #4E75FF), to(#0632CC));
-  background-image: linear-gradient(to right bottom, #4E75FF 30%, #0632CC);
-  background-size: cover;
-  -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+.btn.btn-cta {
+  background-color: #31CF2E;
 }
 
-.btn.btn-primary-gradient:hover {
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+.btn.btn-danger {
+  background-color: #DB4646;
 }
 
 .left {
   margin-right: auto;
+}
+
+.text-light {
+  color: #fff;
 }
 
 * {

@@ -6,20 +6,20 @@
     
     /* Track */
     &::-webkit-scrollbar-track {
-        background: #C4C4C4; 
+        background: $cardBackground; 
         border-radius: 0.5em;
     }
     
     /* Handle */
     &::-webkit-scrollbar-thumb {
-        background: #F4F4F4; 
+        background: $ctaColor; 
         border-radius: 0.5em;
-        border: 3px #C4C4C4 solid;
+        border: 3px $cardBackground solid;
     }
     
     /* Handle on hover */
     &::-webkit-scrollbar-thumb:hover {
-        background: #555; 
+        background: $primaryColor; 
     }
 }
 
@@ -28,34 +28,50 @@
     background-size: cover;
 }
 
+$backgroundColor:#081626;
+$sidebarBackgroundColor:#0D2540;
+$cardBackground:#0B1E33;
+$primaryColor:#6A62FE;
+$dangerColor:#DB4646;
+$ctaColor:#31CF2E;
 
 
 .btn{
     appearance: none;
     border: none;
     outline: none;
-    background-color: transparent;
     color: #fff;
     text-decoration: none;
     border-radius: 0.5em;
-    padding: 0.5em 1em;
+    padding: 0.5em;
     transition: background-color 0.3s,box-shadow 0.3s;
     position: relative;
     text-align: center;
-    
+
+    &:hover{
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn-link{
+        background-color: transparent;
+        color: $primaryColor !important;
+    }
 
     &.btn-primary{
-        background-color: #0632CC;
+        background-color: $primaryColor;
     }
-    &.btn-primary-gradient{
-        @include primaryGradientBackground();
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
-        &:hover{
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-        }
+    &.btn-cta{
+        background-color: $ctaColor;
+    }
+    &.btn-danger{
+        background-color: $dangerColor;
     }
 }
 
 .left{
     margin-right: auto;
+}
+
+.text-light{
+    color: #fff;
 }

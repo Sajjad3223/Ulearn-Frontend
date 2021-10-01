@@ -1,14 +1,14 @@
+@charset "UTF-8";
 .btn {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   border: none;
   outline: none;
-  background-color: transparent;
   color: #fff;
   text-decoration: none;
   border-radius: 0.5em;
-  padding: 0.5em 1em;
+  padding: 0.5em;
   -webkit-transition: background-color 0.3s,-webkit-box-shadow 0.3s;
   transition: background-color 0.3s,-webkit-box-shadow 0.3s;
   transition: background-color 0.3s,box-shadow 0.3s;
@@ -17,25 +17,34 @@
   text-align: center;
 }
 
+.btn:hover {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn .btn-link {
+  background-color: transparent;
+  color: #6A62FE !important;
+}
+
 .btn.btn-primary {
-  background-color: #0632CC;
+  background-color: #6A62FE;
 }
 
-.btn.btn-primary-gradient {
-  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(30%, #4E75FF), to(#0632CC));
-  background-image: linear-gradient(to right bottom, #4E75FF 30%, #0632CC);
-  background-size: cover;
-  -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+.btn.btn-cta {
+  background-color: #31CF2E;
 }
 
-.btn.btn-primary-gradient:hover {
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+.btn.btn-danger {
+  background-color: #DB4646;
 }
 
 .left {
   margin-right: auto;
+}
+
+.text-light {
+  color: #fff;
 }
 
 * {
@@ -43,20 +52,10 @@
   padding: 0;
 }
 
-html {
-  background-image: url(../imgs/SimpleShiny.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
 body {
   margin: 0;
   padding: 0;
-  background-image: url(../imgs/SimpleShiny.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: #081626;
   inset: 0;
   direction: rtl;
   overflow-x: hidden;
@@ -75,18 +74,18 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #C4C4C4;
+  background: #0B1E33;
   border-radius: 0.5em;
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #F4F4F4;
+  background: #31CF2E;
   border-radius: 0.5em;
-  border: 3px #C4C4C4 solid;
+  border: 3px #0B1E33 solid;
 }
 
 body::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #6A62FE;
 }
 
 @media screen and (max-width: 600px) {
@@ -107,31 +106,27 @@ div.sidebar {
   display: -ms-flexbox;
   display: flex;
   position: fixed;
-  margin: 1em;
-  padding: 2em 1em;
   z-index: 99;
-  background-color: rgba(11, 32, 55, 0.5);
-  border-radius: 1em;
+  background-color: rgba(13, 37, 64, 0.5);
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
 }
 
 @media screen and (min-width: 600px) {
   div.sidebar {
-    width: 80px;
-    height: 80vh;
+    width: 100px;
+    height: 100%;
   }
 }
 
 @media screen and (max-width: 600px) {
   div.sidebar {
-    width: 90%;
-    height: 30px;
-    bottom: 1em;
-    margin: 0;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    width: 100%;
+    height: 80px;
+    bottom: 0;
+    right: 0;
   }
 }
 
@@ -147,6 +142,7 @@ div.sidebar nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 1em;
 }
 
 @media screen and (max-width: 600px) {
@@ -180,8 +176,8 @@ div.sidebar nav a:not(a:first-child) {
   display: -ms-grid;
   display: grid;
   margin: 1.5em 1em;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   place-items: center;
   margin: auto;
   border-radius: 0.5em;
@@ -196,7 +192,7 @@ div.sidebar nav a:not(a:first-child) span {
   position: absolute;
   left: -310%;
   font-size: 14px;
-  background-color: #1C8DFF;
+  background-color: #040B13;
   color: #fff;
   padding: 0.5em;
   border-radius: .5em;
@@ -215,7 +211,7 @@ div.sidebar nav a:not(a:first-child) span::before {
   height: 1px;
   content: "";
   border: transparent solid 10px;
-  border-left-color: #1C8DFF;
+  border-left-color: #040B13;
   border-left-width: 20px;
   border-left-style: solid;
   position: absolute;
@@ -239,20 +235,18 @@ div.sidebar nav a:not(a:first-child) span::before {
     -webkit-transform: translate(50%, 0);
             transform: translate(50%, 0);
     border: transparent solid 10px;
-    border-top-color: #1C8DFF;
+    border-top-color: #040B13;
     border-top-width: 20px;
     border-top-style: solid;
   }
 }
 
 div.sidebar nav a:not(a:first-child).active {
-  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(30%, #4E75FF), to(#0632CC));
-  background-image: linear-gradient(to right bottom, #4E75FF 30%, #0632CC);
-  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 div.sidebar nav a:not(a:first-child):hover {
-  background-color: #4E75FF;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 div.sidebar nav a:not(a:first-child):hover span {
@@ -278,7 +272,7 @@ main.content {
           flex-direction: column;
   margin: 2em;
   margin-right: 150px;
-  width: 90%;
+  width: 90% !important;
 }
 
 @media screen and (max-width: 600px) {
@@ -291,7 +285,7 @@ main.content {
 }
 
 main.content header {
-  width: 100%;
+  width: 95%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -377,9 +371,8 @@ main.content div.banners div {
   height: 280px;
   position: relative;
   z-index: 2;
+  border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 1em;
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
 }
 
 @media screen and (max-width: 768px) {
@@ -392,13 +385,13 @@ main.content div.banners div {
 main.content div.banners div::before, main.content div.banners div::after {
   position: absolute;
   content: "";
-  -webkit-filter: blur(20px);
-          filter: blur(20px);
   z-index: 1;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #F4F6A1;
+  background-color: #081020;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
 }
 
 main.content div.banners div img {
@@ -406,10 +399,10 @@ main.content div.banners div img {
   position: absolute;
   top: -5em;
   z-index: 3;
-  -webkit-transition: -webkit-transform 10s ease-out;
-  transition: -webkit-transform 10s ease-out;
-  transition: transform 10s ease-out;
-  transition: transform 10s ease-out, -webkit-transform 10s ease-out;
+  -webkit-transition: -webkit-transform 5s ease-out;
+  transition: -webkit-transform 5s ease-out;
+  transition: transform 5s ease-out;
+  transition: transform 5s ease-out, -webkit-transform 5s ease-out;
 }
 
 main.content div.banners div img.icon {
@@ -433,7 +426,7 @@ main.content div.banners div a {
 }
 
 main.content div.banners .unityBanner {
-  background-color: rgba(255, 80, 69, 0.4);
+  background-color: rgba(13, 38, 64, 0.5);
 }
 
 main.content div.banners .unityBanner:hover img:not(.icon) {
@@ -444,7 +437,7 @@ main.content div.banners .unityBanner:hover img:not(.icon) {
 main.content div.banners .unityBanner::before {
   top: -1em;
   right: -1em;
-  background-color: #F6AAA1;
+  background-color: rgba(33, 65, 97, 0.8);
   width: 160px;
   height: 160px;
   opacity: 0.7;
@@ -452,7 +445,7 @@ main.content div.banners .unityBanner::before {
 
 main.content div.banners .unityBanner::after {
   right: 50%;
-  top: 20%;
+  top: 30%;
   width: 240px;
   height: 240px;
   opacity: 0.5;
@@ -467,7 +460,7 @@ main.content div.banners .unityBanner img.icon {
 }
 
 main.content div.banners .unrealBanner {
-  background-color: rgba(78, 117, 255, 0.4);
+  background-color: rgba(78, 117, 255, 0.3);
 }
 
 main.content div.banners .unrealBanner:hover img:not(.icon) {
@@ -478,7 +471,7 @@ main.content div.banners .unrealBanner:hover img:not(.icon) {
 main.content div.banners .unrealBanner::before {
   top: -2em;
   left: 30%;
-  background-color: #DBA9F3;
+  background-color: rgba(219, 169, 243, 0.3);
   width: 110px;
   height: 110px;
 }
@@ -486,7 +479,7 @@ main.content div.banners .unrealBanner::before {
 main.content div.banners .unrealBanner::after {
   right: 10%;
   bottom: -2em;
-  background-color: #AD29FD;
+  background-color: rgba(173, 41, 253, 0.3);
   width: 200px;
   height: 200px;
 }
@@ -556,24 +549,28 @@ main.content div.lastCourses .topic a svg {
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
-main.content div.lastCourses .courses {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+main.content div.lastCourses > a {
+  padding: 1em 0;
+  margin: 1em;
 }
 
-main.content div.lastCourses .courses .card {
+main.content .courses {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-grid-columns: (minmax(270px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  place-items: center;
+}
+
+main.content .courses .card {
   margin: 1em 0;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: 25vw;
-  min-width: 300px;
+  width: 270px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -583,11 +580,8 @@ main.content div.lastCourses .courses .card {
           flex-direction: column;
   padding: 0;
   border-radius: 1em;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #0E2A47), to(#143C66));
-  background-image: linear-gradient(to bottom, #0E2A47 50%, #143C66);
+  background-color: #0B1E33;
   color: #fff;
-  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   position: relative;
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
@@ -595,55 +589,64 @@ main.content div.lastCourses .courses .card {
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
-main.content div.lastCourses .courses .card:hover {
+main.content .courses .card svg {
+  opacity: 0.5;
+}
+
+main.content .courses .card:hover {
   -webkit-transform: translateY(-15px);
           transform: translateY(-15px);
 }
 
-main.content div.lastCourses .courses .card:hover button {
+main.content .courses .card:hover button {
   -webkit-transform: translate(-10px, -10px);
           transform: translate(-10px, -10px);
   opacity: 1;
 }
 
-main.content div.lastCourses .courses .card .image {
+main.content .courses .card:hover button svg {
+  opacity: 1;
+}
+
+main.content .courses .card .image {
   width: 100%;
   position: relative;
   height: 50%;
 }
 
-main.content div.lastCourses .courses .card .image a {
+main.content .courses .card .image a {
   height: 100%;
   position: relative;
 }
 
-main.content div.lastCourses .courses .card .image a img {
+main.content .courses .card .image a img {
   max-width: 100%;
   border-radius: 1em 1em 0 0;
 }
 
-main.content div.lastCourses .courses .card .image a.master {
+main.content .courses .card .image a.master {
   position: absolute;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  bottom: -5%;
+  bottom: -3%;
   left: 1em;
-  border: #0E2A47 5px solid;
+  border: #0B1E33 5px solid;
 }
 
-main.content div.lastCourses .courses .card .image a.master img {
+main.content .courses .card .image a.master img {
   border-radius: 50%;
 }
 
-main.content div.lastCourses .courses .card .image a.master::after {
+main.content .courses .card .image a.master::after {
   height: 30px;
-  background-color: #0B2037;
+  width: 100px;
+  background-color: #0D2540;
   position: absolute;
-  right: -400%;
-  top: 50%;
-  -webkit-transform: translate(-20px, -50%);
-          transform: translate(-20px, -50%);
+  bottom: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   content: attr(data-master-name);
   text-align: center;
   border-radius: .5em;
@@ -657,13 +660,13 @@ main.content div.lastCourses .courses .card .image a.master::after {
   pointer-events: none;
 }
 
-main.content div.lastCourses .courses .card .image a.master:hover::after {
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
+main.content .courses .card .image a.master:hover::after {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   opacity: 1;
 }
 
-main.content div.lastCourses .courses .card button {
+main.content .courses .card button {
   position: absolute;
   width: 3em;
   height: 3em;
@@ -681,7 +684,7 @@ main.content div.lastCourses .courses .card button {
   transition: transform 0.5s, opacity 0.2s, box-shadow 0.3s, -webkit-transform 0.5s, -webkit-box-shadow 0.3s;
 }
 
-main.content div.lastCourses .courses .card .details {
+main.content .courses .card .details {
   width: 100%;
   margin: 1em;
   margin-top: 0;
@@ -695,19 +698,27 @@ main.content div.lastCourses .courses .card .details {
           align-items: center;
 }
 
-main.content div.lastCourses .courses .card .details a:first-child {
+main.content .courses .card .details a:first-child {
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
   margin-bottom: 1em;
-  width: 100%;
+  width: 90%;
   color: white;
   text-decoration: none;
+  font-size: 14px;
 }
 
-main.content div.lastCourses .courses .card .details a:first-child h4 {
+main.content .courses .card .details a:first-child:hover {
+  color: #6A62FE;
+}
+
+main.content .courses .card .details a:first-child h4 {
   margin: 0.2em 0;
 }
 
-main.content div.lastCourses .courses .card .details .price {
-  width: 45%;
+main.content .courses .card .details .courseDetails {
+  width: 90%;
+  height: 35px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -716,11 +727,60 @@ main.content div.lastCourses .courses .card .details .price {
           align-items: center;
 }
 
-main.content div.lastCourses .courses .card .details .price svg {
+main.content .courses .card .details .courseDetails div {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 600px) {
+  main.content .courses .card .details .courseDetails div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main.content .courses .card .details .courseDetails div div {
+    margin: 0.2em 0;
+  }
+}
+
+main.content .courses .card .details .courseDetails div svg {
+  margin-left: 0.7em;
+}
+
+main.content .courses .card .details .price {
+  width: 90%;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+}
+
+main.content .courses .card .details .price svg {
   margin-left: 0.5em;
 }
 
-main.content div.lastCourses .courses .card .details .price .discount {
+main.content .courses .card .details .price .discount {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main.content .courses .card .details .price .discount div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -728,10 +788,14 @@ main.content div.lastCourses .courses .card .details .price .discount {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 50%;
 }
 
-main.content div.lastCourses .courses .card .details .price .discount span {
-  background-color: #083EFD;
+main.content .courses .card .details .price .discount div span {
+  background-color: #DB4646;
   border-radius: 1em;
   text-align: center;
   width: -webkit-fit-content;
@@ -739,23 +803,26 @@ main.content div.lastCourses .courses .card .details .price .discount span {
   width: fit-content;
   padding: 0 0.7em;
   font-size: 12px;
-  margin-right: auto;
+  margin-left: auto;
 }
 
-main.content div.lastCourses .courses .card .details .price .discount s {
+main.content .courses .card .details .price .discount div s {
   opacity: 0.5;
-  font-size: 14px;
+  font-size: 12px;
 }
 
-main.content div.lastCourses .courses .card .details a:last-child {
-  width: 35%;
-  border-radius: 2em;
+main.content .courses .card .details .price .discount strong {
+  word-wrap: 50%;
+  font-size: 16px;
+}
+
+main.content .courses .card .details a:last-child {
+  margin: 0;
+  padding: 0.5em 0;
+  width: 90%;
+  border-radius: 0.5em;
   text-align: center;
-}
-
-main.content div.lastCourses > a {
-  padding: 1em 0;
-  margin: 1em;
+  font-size: 14px;
 }
 
 main.content footer {
@@ -816,6 +883,11 @@ main.content footer .right .subscribe input {
   font-family: 'vazir fd';
 }
 
+main.content footer .right .subscribe input:focus {
+  -webkit-box-shadow: 0 0 10px rgba(70, 70, 241, 0.3);
+          box-shadow: 0 0 10px rgba(70, 70, 241, 0.3);
+}
+
 main.content footer .right .subscribe svg, main.content footer .right .subscribe button {
   position: absolute;
   top: 50%;
@@ -852,6 +924,12 @@ main.content footer .right div:last-child ul li {
 main.content footer .right div:last-child ul li a {
   text-decoration: none;
   color: #fff;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+main.content footer .right div:last-child ul li a:hover {
+  color: #31CF2E;
 }
 
 main.content footer .left {
@@ -898,7 +976,28 @@ main.content footer .left .socialNetworks {
 }
 
 main.content footer .left .socialNetworks a {
+  text-decoration: none;
   margin: 0 0.5em;
+}
+
+main.content footer .left .socialNetworks a svg .stroke-filled {
+  stroke: #fff;
+  -webkit-transition: stroke 0.3s;
+  transition: stroke 0.3s;
+}
+
+main.content footer .left .socialNetworks a svg .filled {
+  fill: #fff;
+  -webkit-transition: fill 0.3s;
+  transition: fill 0.3s;
+}
+
+main.content footer .left .socialNetworks a:hover svg .stroke-filled {
+  stroke: #6A62FE;
+}
+
+main.content footer .left .socialNetworks a:hover svg .filled {
+  fill: #6A62FE;
 }
 
 main.content footer .left h4 {
@@ -943,5 +1042,322 @@ main.content footer .left h4 {
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.breadcrumb {
+  margin: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.breadcrumb ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.breadcrumb ol li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 0.5em;
+}
+
+.breadcrumb ol li a {
+  text-decoration: none;
+  color: #6A62FE;
+}
+
+.breadcrumb ol li a svg {
+  fill: #6A62FE;
+}
+
+.breadcrumb ol li span {
+  color: #fff;
+}
+
+.breadcrumb ol li::after {
+  content: "◄";
+  color: rgba(255, 255, 255, 0.5);
+  margin-right: 0.5em;
+}
+
+.breadcrumb ol li:last-child::after {
+  display: none;
+}
+
+.filter {
+  width: 90%;
+  border: 2px solid #6A62FE;
+  padding: 1em 2em;
+  border-radius: 1em;
+}
+
+.filter > div > div {
+  margin: auto;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown .dropdown-toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  min-width: 15em;
+  position: relative;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #31CF2E;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+  font-weight: bolder;
+  padding: 1em 2em;
+  padding-left: 4em;
+  -webkit-transition: border-radius 0.5s ease;
+  transition: border-radius 0.5s ease;
+  margin: 0;
+  font-family: 'vazir fd';
+  cursor: pointer;
+}
+
+.dropdown .dropdown-toggle ~ svg {
+  position: absolute;
+  left: 1em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.dropdown .expanded {
+  border-radius: 1em 1em 0 0;
+}
+
+.dropdown .expanded ~ svg {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
+}
+
+.dropdown .expanded ~ .dropdown-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dropdown ul.dropdown-menu {
+  position: absolute;
+  max-height: 17em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
+  text-align: right;
+  background-color: #0B1E33;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  padding: 1em;
+  border-radius: 0 0 1em 1em;
+  z-index: 5;
+  overflow-y: auto;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+
+.dropdown ul.dropdown-menu::-webkit-scrollbar {
+  width: 10px;
+}
+
+.dropdown ul.dropdown-menu::-webkit-scrollbar-track {
+  background: #0B1E33;
+  border-radius: 0.5em;
+}
+
+.dropdown ul.dropdown-menu::-webkit-scrollbar-thumb {
+  background: #31CF2E;
+  border-radius: 0.5em;
+  border: 3px #0B1E33 solid;
+}
+
+.dropdown ul.dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background: #6A62FE;
+}
+
+.dropdown ul.dropdown-menu li {
+  margin: 0.25em 0;
+  font-size: 16px;
+}
+
+.dropdown ul.dropdown-menu li ul {
+  list-style: none;
+  margin-right: 2em;
+}
+
+.dropdown ul.dropdown-menu li ul li {
+  margin: 0.25em 0;
+  font-size: 14px;
+}
+
+.dropdown ul.dropdown-menu li a {
+  text-decoration: none;
+  color: #fff;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.dropdown ul.dropdown-menu li a:hover {
+  color: #6A62FE;
+}
+
+.dropdown ul.dropdown-menu li input {
+  margin: 0;
+  width: 100%;
+  border-radius: 0.5em;
+}
+
+.text-input {
+  outline: none;
+  border: none;
+  background-color: #0D2540;
+  padding: .5em;
+  font-family: 'vazir fd';
+  color: #fff;
+}
+
+.toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #0B1E33;
+  height: 60px;
+  border-radius: 1em;
+}
+
+.toggle div {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.toggle div label {
+  color: #fff;
+  padding: 0.7em 2em;
+  border-radius: 1em;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.toggle div input[type=radio] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+}
+
+.toggle div input[type=radio]:checked ~ label {
+  background-color: #081626;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1em auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pagination a {
+  margin: 0 0.5em;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+.pagination a svg {
+  stroke: #31CF2E;
+}
+
+.pagination a:first-child:hover {
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
+}
+
+.pagination a:last-child:hover {
+  -webkit-transform: translateX(-5px);
+          transform: translateX(-5px);
+}
+
+.pagination ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.pagination ul li {
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+.pagination ul li:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+.pagination ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0 0.5em;
+}
+
+.pagination ul li a.active {
+  position: relative;
+}
+
+.pagination ul li a.active::before {
+  content: "";
+  position: absolute;
+  background-color: #0D2540;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -1;
+  border-radius: 0.5em;
 }
 /*# sourceMappingURL=style.css.map */
