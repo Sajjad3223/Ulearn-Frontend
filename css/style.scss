@@ -709,25 +709,19 @@ main.content{
             align-items: center;
             margin: 0 0.5em;
             a{
+                display: flex;
                 text-decoration: none;
                 color: $primaryColor;
                 svg{
-                    fill: $primaryColor;
+                    stroke: $primaryColor;
                 }
             }
             span{
-                color: #fff;
+                color: rgba(255, 255, 255, 0.5);
             }
-            &::after{
-                content: "◄";
-                color: rgba(#fff,0.5);
-                margin-right: 0.5em;
-            }
-            &:last-child{
-                &::after{
-                    display: none;
-                }
-            }
+        }
+        svg{
+            margin: 0 5px;
         }
     }
 }

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .btn {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -17,11 +16,6 @@
   text-align: center;
 }
 
-.btn:hover {
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-}
-
 .btn .btn-link {
   background-color: transparent;
   color: #6A62FE !important;
@@ -31,12 +25,45 @@
   background-color: #6A62FE;
 }
 
+.btn.btn-primary:hover {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn.btn-outline-success {
+  border: 2px solid #3B9950;
+  border-radius: 0.5em;
+}
+
+.btn.btn-outline-success:hover {
+  background-color: #3B9950;
+}
+
+.btn.btn-outline-info {
+  border: 2px solid #3E7A99;
+  border-radius: 0.5em;
+}
+
+.btn.btn-outline-info:hover {
+  background-color: #3E7A99;
+}
+
 .btn.btn-cta {
   background-color: #31CF2E;
 }
 
+.btn.btn-cta:hover {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
 .btn.btn-danger {
   background-color: #DB4646;
+}
+
+.btn.btn-danger:hover {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .left {
@@ -1072,26 +1099,23 @@ main.content footer .left h4 {
 }
 
 .breadcrumb ol li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   text-decoration: none;
   color: #6A62FE;
 }
 
 .breadcrumb ol li a svg {
-  fill: #6A62FE;
+  stroke: #6A62FE;
 }
 
 .breadcrumb ol li span {
-  color: #fff;
-}
-
-.breadcrumb ol li::after {
-  content: "◄";
   color: rgba(255, 255, 255, 0.5);
-  margin-right: 0.5em;
 }
 
-.breadcrumb ol li:last-child::after {
-  display: none;
+.breadcrumb ol svg {
+  margin: 0 5px;
 }
 
 .filter {

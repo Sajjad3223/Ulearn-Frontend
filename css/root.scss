@@ -34,6 +34,8 @@ $cardBackground:#0B1E33;
 $primaryColor:#6A62FE;
 $dangerColor:#DB4646;
 $ctaColor:#31CF2E;
+$successColor:#3B9950;
+$infoColor:#3E7A99;
 
 
 .btn{
@@ -47,24 +49,41 @@ $ctaColor:#31CF2E;
     transition: background-color 0.3s,box-shadow 0.3s;
     position: relative;
     text-align: center;
-
-    &:hover{
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-    }
-
     .btn-link{
         background-color: transparent;
         color: $primaryColor !important;
     }
-
     &.btn-primary{
         background-color: $primaryColor;
+        &:hover{
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+    }
+    &.btn-outline-success{
+        border: 2px solid $successColor;
+        border-radius: 0.5em;
+        &:hover{
+            background-color: $successColor ;
+        }
+    }
+    &.btn-outline-info{
+        border: 2px solid $infoColor;
+        border-radius: 0.5em;
+        &:hover{
+            background-color: $infoColor ;
+        }
     }
     &.btn-cta{
         background-color: $ctaColor;
+        &:hover{
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
     }
     &.btn-danger{
         background-color: $dangerColor;
+        &:hover{
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
     }
 }
 

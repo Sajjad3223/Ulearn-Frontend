@@ -1,0 +1,284 @@
+@import 'root';
+
+html{
+    scroll-behavior: smooth;
+}
+
+.single-header{
+    display: flex;
+    align-items: center;
+}
+
+
+#shortLink{
+    border: 2px solid $primaryColor;
+    border-radius: 0.5em;
+    position: relative;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    & > svg{
+        margin-left: 0.5em;
+    }
+    .shortLink{
+        margin-right: 1em;
+        font-family: 'Montserrat';
+    }
+    button{
+        position: absolute;
+        display: grid;
+        place-items: center;
+        appearance: none;
+        text-align: center;
+        border: none;
+        outline: none;
+        background-color: $primaryColor;
+        width: 50px;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: 0;padding: 0;
+        border-radius: 0.5em 0 0 0.5em;
+        cursor: pointer;
+    }
+}
+
+.container{
+    .row{
+        direction: ltr !important;
+        & > div{
+            direction: rtl !important;
+            &:last-child{
+                & > div{
+                    border: 5px solid $cardBackground;
+                    padding: 1em;
+                    border-radius: 1em;
+                    margin-bottom: 1em;
+                    .title{
+                        width: 100%;
+                        display: flex;
+                        margin-bottom: 0.5em;
+                        div{
+                            margin-right: auto;
+                            font-size: 14px;
+                        }
+                        svg{
+                            margin-left: 0.5em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.course-details{
+    background-color: $cardBackground;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1em;
+    padding: 1em;
+    & > div{
+        margin: .5em 0;
+        display: flex;
+        align-items: center;
+        &.price{
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid rgba($color: #fff, $alpha: 0.5);
+            padding-bottom: 1em;
+            .course-price{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .discount{
+                    s{
+                        font-size: 14px;
+                        opacity: 0.5;
+                    }
+                    span{
+                        background-color: $dangerColor;
+                        border-radius: 1.5em;
+                        font-size: 12px;
+                        padding: 0 0.5em;
+                    }
+                }
+                strong{
+                    font-size: 1.5em;
+                    sub{
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+
+        &.master{
+            strong{
+                a{
+                    display: flex;
+                    align-items: center;
+                    color: #fff;
+                    transition: color 0.3s;
+                    margin: 0;padding: 0;
+                    svg{
+                        margin-right: 10px;
+                        transition: transform 0.3s;
+                    }
+                    &:hover{
+                        color: $ctaColor;
+                        svg{
+                            transform: translateX(-5px);
+                        }
+                    }
+                }
+            }
+        }
+        & svg{
+            width: 6%;
+            margin-left: 1em;
+        }
+        span{
+            width: 50%;
+        }
+    }
+    a{
+        margin: 0.5em 0;
+        padding: 0.5em 0;
+        border-radius: 0.5em;
+        
+    }
+}
+
+.tags,.requirments{
+    margin: 1em 0;
+    display: flex;
+    flex-direction: column;
+    ul{
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap;
+        li{
+            background-color: $cardBackground;
+            padding: 0.5em 1em;
+            margin: 0.5em;
+            border-radius: 0.5em;
+            transition: background-color 0.5s;
+            &:hover{
+                background-color: $infoColor;
+            }
+            a{
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+a[href='#comments']{
+    display:flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    svg{
+        margin: 0 0.5em;
+    }
+}
+
+.course-description{
+    img{
+        max-width: 100%;
+        border-radius: 1em;
+    }
+    h3{
+        margin: 0.5em 0;
+    }
+    p{
+        font-size: 14px;
+        margin: 0.5em;
+    }
+}
+
+.course-videos{
+    ul.videos{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        li{
+            display: flex;
+            align-items: center;
+            width: 95%;
+            margin: 0.5em 0;
+            padding: 0.5em;
+            border: 2px solid $primaryColor;
+            border-radius: 0.5em;
+            span.counter{
+                width: 35px;
+                height: 35px;
+                display: grid;
+                place-items: center;
+                border-radius: 100%;
+                background-color: $cardBackground;
+                margin-left: 0.5em;
+            }
+            strong{
+                a{
+                    text-decoration: none;
+                    color: #fff;
+                }
+            }
+            div.actions{
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                span.video-time{
+                    margin: 0 0.5em;   
+                }
+                margin-right: auto;
+                a{
+                    margin: 0 0.2em;
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    display: grid;
+                    place-items: center;
+                    text-decoration: none;
+                    position: relative;
+                    &::after{
+                        position: absolute;
+                        content: attr(data-tooltip);
+                        width: max-content;
+                        padding: 0.5em 0.7em;
+                        border-radius: 0.5em;
+                        color: #fff;
+                        background-color: $sidebarBackgroundColor;
+                        top: -140%;
+                        transform: translateY(50%);
+                        opacity: 0;
+                        transition: transform 0.5s,opacity 0.3s;
+                        pointer-events: none;
+                    }
+                    &:hover{
+                        &::after{
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
+                    }
+                    &.download-video
+                    {
+                        background-color: $primaryColor;
+                    }
+                    &.watch-online{
+                        border: 2px solid $successColor;
+                    }
+                    &.download-video-files{
+                        border: 2px solid $ctaColor;
+                    }
+                    &.video-locked{
+                        background-color: $dangerColor;
+                    }
+                }
+            }
+        }
+    }
+}
