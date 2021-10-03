@@ -617,13 +617,9 @@ main.content{
             align-items: center;
             justify-content: center;
             @media screen and(max-width:768px){
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-around;
                 h4{
                     width: 100% !important;
                     text-align: center;
-                    margin: 1em !important;
                 }
             }
             img{
@@ -708,12 +704,19 @@ main.content{
             display: flex;
             align-items: center;
             margin: 0 0.5em;
+            @media screen and (max-width:600px){
+                font-size: 12px;
+            }
             a{
                 display: flex;
                 text-decoration: none;
                 color: $primaryColor;
                 svg{
                     stroke: $primaryColor;
+                    @media screen and (max-width:600px){
+                        width: 20px;
+                        height: 20px;
+                    }
                 }
             }
             span{

@@ -14,6 +14,7 @@
   transition: background-color 0.3s,box-shadow 0.3s,-webkit-box-shadow 0.3s;
   position: relative;
   text-align: center;
+  cursor: pointer;
 }
 
 .btn .btn-link {
@@ -26,6 +27,24 @@
 }
 
 .btn.btn-primary:hover {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn.btn-outline-primary {
+  border: 2px solid #6A62FE;
+  border-radius: 0.5em;
+}
+
+.btn.btn-outline-primary:hover {
+  background-color: #6A62FE;
+}
+
+.btn.btn-success {
+  background-color: #3B9950;
+}
+
+.btn.btn-success:hover {
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
@@ -72,6 +91,91 @@
 
 .text-light {
   color: #fff;
+}
+
+.text-dark {
+  color: #000;
+}
+
+.text-warning {
+  color: #52FF00;
+}
+
+.text-cta {
+  color: #31CF2E;
+}
+
+.text-primary {
+  color: #6A62FE;
+}
+
+.text-danger {
+  color: #DB4646;
+}
+
+.text-info {
+  color: #3E7A99;
+}
+
+.alert {
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+}
+
+@media screen and (max-width: 600px) {
+  .alert {
+    font-size: 12px;
+  }
+}
+
+.alert.alert-warning {
+  border: 2px solid #52FF00;
+}
+
+input[type=checkbox] {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+  margin-left: 0.5em;
+}
+
+input[type=checkbox]::before, input[type=checkbox]::after {
+  content: "";
+  display: block;
+  background-size: cover;
+  height: 2em;
+  width: 2em;
+  position: absolute;
+  pointer-events: none;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+input[type=checkbox]::before {
+  background-image: url("../imgs/Unckecked.svg");
+}
+
+input[type=checkbox]::after {
+  background-image: url("../imgs/Checked.svg");
+  opacity: 0;
+}
+
+input[type=checkbox]:checked::before {
+  opacity: 0;
+}
+
+input[type=checkbox]:checked::after {
+  opacity: 1;
 }
 
 html {
@@ -131,22 +235,22 @@ html {
   cursor: pointer;
 }
 
-.container .row {
+.course-content .row {
   direction: ltr !important;
 }
 
-.container .row > div {
+.course-content .row > div {
   direction: rtl !important;
 }
 
-.container .row > div:last-child > div {
+.course-content .row > div:last-child > div {
   border: 5px solid #0B1E33;
   padding: 1em;
   border-radius: 1em;
   margin-bottom: 1em;
 }
 
-.container .row > div:last-child > div .title {
+.course-content .row > div:last-child > div .title {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -154,12 +258,12 @@ html {
   margin-bottom: 0.5em;
 }
 
-.container .row > div:last-child > div .title div {
+.course-content .row > div:last-child > div .title div {
   margin-right: auto;
   font-size: 14px;
 }
 
-.container .row > div:last-child > div .title svg {
+.course-content .row > div:last-child > div .title svg {
   margin-left: 0.5em;
 }
 
@@ -276,7 +380,7 @@ html {
   border-radius: 0.5em;
 }
 
-.tags, .requirments {
+.tags, .requirments, .share {
   margin: 1em 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -287,7 +391,7 @@ html {
           flex-direction: column;
 }
 
-.tags ul, .requirments ul {
+.tags ul, .requirments ul, .share ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -296,7 +400,7 @@ html {
       flex-wrap: wrap;
 }
 
-.tags ul li, .requirments ul li {
+.tags ul li, .requirments ul li, .share ul li {
   background-color: #0B1E33;
   padding: 0.5em 1em;
   margin: 0.5em;
@@ -305,13 +409,21 @@ html {
   transition: background-color 0.5s;
 }
 
-.tags ul li:hover, .requirments ul li:hover {
+.tags ul li:hover, .requirments ul li:hover, .share ul li:hover {
   background-color: #3E7A99;
 }
 
-.tags ul li a, .requirments ul li a {
+.tags ul li a, .requirments ul li a, .share ul li a {
   color: #fff;
   text-decoration: none;
+}
+
+.share ul li {
+  max-width: 40px;
+}
+
+.share ul li a svg {
+  width: 100%;
 }
 
 a[href='#comments'] {
@@ -382,6 +494,20 @@ a[href='#comments'] svg {
   margin-left: 0.5em;
 }
 
+@media screen and (max-width: 600px) {
+  .course-videos ul.videos li span.counter {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .course-videos ul.videos li strong {
+    font-size: 12px;
+  }
+}
+
 .course-videos ul.videos li strong a {
   text-decoration: none;
   color: #fff;
@@ -405,6 +531,12 @@ a[href='#comments'] svg {
   margin: 0 0.5em;
 }
 
+@media screen and (max-width: 600px) {
+  .course-videos ul.videos li div.actions span.video-time {
+    font-size: 12px;
+  }
+}
+
 .course-videos ul.videos li div.actions a {
   margin: 0 0.2em;
   width: 35px;
@@ -414,34 +546,17 @@ a[href='#comments'] svg {
   display: grid;
   place-items: center;
   text-decoration: none;
-  position: relative;
 }
 
-.course-videos ul.videos li div.actions a::after {
-  position: absolute;
-  content: attr(data-tooltip);
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  padding: 0.5em 0.7em;
-  border-radius: 0.5em;
-  color: #fff;
-  background-color: #0D2540;
-  top: -140%;
-  -webkit-transform: translateY(50%);
-          transform: translateY(50%);
-  opacity: 0;
-  -webkit-transition: opacity 0.3s,-webkit-transform 0.5s;
-  transition: opacity 0.3s,-webkit-transform 0.5s;
-  transition: transform 0.5s,opacity 0.3s;
-  transition: transform 0.5s,opacity 0.3s,-webkit-transform 0.5s;
-  pointer-events: none;
-}
-
-.course-videos ul.videos li div.actions a:hover::after {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-  opacity: 1;
+@media screen and (max-width: 600px) {
+  .course-videos ul.videos li div.actions a {
+    width: 25px;
+    height: 25px;
+  }
+  .course-videos ul.videos li div.actions a svg {
+    width: 15px;
+    height: 15px;
+  }
 }
 
 .course-videos ul.videos li div.actions a.download-video {
@@ -458,5 +573,239 @@ a[href='#comments'] svg {
 
 .course-videos ul.videos li div.actions a.video-locked {
   background-color: #DB4646;
+}
+
+a.tooltip {
+  position: relative;
+}
+
+a.tooltip::after {
+  position: absolute;
+  content: attr(data-tooltip);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0.5em 0.7em;
+  border-radius: 0.5em;
+  color: #fff;
+  background-color: #0D2540;
+  top: -200%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s,-webkit-transform 0.5s;
+  transition: opacity 0.3s,-webkit-transform 0.5s;
+  transition: transform 0.5s,opacity 0.3s;
+  transition: transform 0.5s,opacity 0.3s,-webkit-transform 0.5s;
+  pointer-events: none;
+}
+
+a.tooltip:hover::after {
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+.course-comments .not-authenticated {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.5em;
+}
+
+.course-comments .not-authenticated svg {
+  margin-left: 0.5em;
+}
+
+.course-comments .add-comment {
+  width: 100%;
+}
+
+.course-comments .add-comment form {
+  width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.course-comments .add-comment form > div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0.5em;
+}
+
+.course-comments .add-comment form > div:first-child {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.course-comments .add-comment form > div:first-child label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.course-comments .add-comment form > div:first-child label svg {
+  margin-left: 0.5em;
+}
+
+.course-comments .add-comment form > div:first-child textarea {
+  padding: 1em;
+  color: #fff;
+  font-family: 'vazir fd';
+  margin-top: 0.5em;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  outline: none;
+  background-color: #0B1E33;
+  border-radius: 1em;
+  resize: vertical;
+}
+
+@media screen and (max-width: 600px) {
+  .course-comments .add-comment form > div:last-child {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .course-comments .add-comment form > div:last-child div, .course-comments .add-comment form > div:last-child button {
+    width: 100% !important;
+    margin: 0.5em 0;
+  }
+}
+
+.course-comments .add-comment form > div:last-child div {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.course-comments .add-comment form > div:last-child button {
+  width: 40%;
+  font-family: 'vazir fd';
+}
+
+.course-comments hr {
+  margin: 0.5em 0;
+}
+
+.course-comments ul.comments {
+  margin: 0.5em;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 97%;
+}
+
+.course-comments ul.comments li.comment {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 0.5em;
+}
+
+.course-comments ul.comments li.comment div.commtent-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border: 2px solid #fff;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+.course-comments ul.comments li.comment div.commtent-content img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-left: 1em;
+}
+
+.course-comments ul.comments li.comment div.commtent-content div.comment-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 0.5em;
+}
+
+.course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top div.send-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top div.actions {
+  margin-right: auto;
+}
+
+.course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top div.actions a {
+  text-decoration: none;
+  margin-right: 0.5em;
+}
+
+.course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-body {
+  margin: 0.5em;
+}
+
+.course-comments ul.comments li.comment ul {
+  width: 90%;
+  margin: 0.5em auto 0.5em 0;
+}
+
+.course-comments ul.comments li.comment ul li div.commtent-content {
+  border-color: #31CF2E;
 }
 /*# sourceMappingURL=single.css.map */

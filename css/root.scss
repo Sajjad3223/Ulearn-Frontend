@@ -36,6 +36,7 @@ $dangerColor:#DB4646;
 $ctaColor:#31CF2E;
 $successColor:#3B9950;
 $infoColor:#3E7A99;
+$warningColor:#52FF00;
 
 
 .btn{
@@ -49,12 +50,26 @@ $infoColor:#3E7A99;
     transition: background-color 0.3s,box-shadow 0.3s;
     position: relative;
     text-align: center;
+    cursor: pointer;
     .btn-link{
         background-color: transparent;
         color: $primaryColor !important;
     }
     &.btn-primary{
         background-color: $primaryColor;
+        &:hover{
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+    }
+    &.btn-outline-primary{
+        border: 2px solid $primaryColor;
+        border-radius: 0.5em;
+        &:hover{
+            background-color: $primaryColor ;
+        }
+    }
+    &.btn-success{
+        background-color: $successColor;
         &:hover{
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
         }
@@ -93,4 +108,75 @@ $infoColor:#3E7A99;
 
 .text-light{
     color: #fff;
+}
+.text-dark{
+    color: #000;
+}
+.text-warning{
+    color: $warningColor;
+}
+.text-cta{
+    color: $ctaColor;
+}
+.text-primary{
+    color: $primaryColor;
+}
+.text-danger{
+    color: $dangerColor;
+}
+.text-info{
+    color: $infoColor;
+}
+
+.alert{
+    margin: 0.5em;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    @media screen and (max-width:600px){
+        font-size: 12px;
+    }
+    &.alert-warning{
+        border: 2px solid $warningColor;
+    }
+}
+
+
+input[type=checkbox]{
+    position: relative;
+    appearance: none;
+    outline: none;
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+    margin-left: 0.5em;
+    &::before,&::after{
+        content: "";
+        display: block;
+        background-size: cover;
+        height: 2em;
+        width: 2em;
+        position: absolute;
+        pointer-events: none;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: opacity 0.5s;
+    }
+
+    &::before{
+        background-image: url('../imgs/Unckecked.svg');
+    }
+    &::after{
+        background-image: url('../imgs/Checked.svg');
+        opacity: 0;
+    }
+    
+    &:checked {
+        &::before{
+            opacity: 0;
+        }
+        &::after{
+            opacity: 1;
+        }
+    }
 }
