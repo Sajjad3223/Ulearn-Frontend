@@ -191,7 +191,14 @@ html {
           align-items: center;
 }
 
+@media screen and (max-width: 500px) {
+  .single-header h2 {
+    font-size: 20px;
+  }
+}
+
 #shortLink {
+  max-width: 95%;
   border: 2px solid #6A62FE;
   border-radius: 0.5em;
   position: relative;
@@ -208,9 +215,27 @@ html {
   margin-left: 0.5em;
 }
 
+@media screen and (max-width: 500px) {
+  #shortLink > svg {
+    max-width: 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #shortLink strong {
+    font-size: 14px;
+  }
+}
+
 #shortLink .shortLink {
   margin-right: 1em;
   font-family: 'Montserrat';
+}
+
+@media screen and (max-width: 500px) {
+  #shortLink .shortLink {
+    font-size: 14px;
+  }
 }
 
 #shortLink button {
@@ -256,6 +281,13 @@ html {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 0.5em;
+}
+
+@media screen and (max-width: 500px) {
+  .course-content .row > div:last-child > div .title {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .course-content .row > div:last-child > div .title div {
@@ -314,20 +346,61 @@ html {
           align-items: center;
 }
 
+.course-details > div.price .course-price .discount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+  .course-details > div.price .course-price .discount {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
 .course-details > div.price .course-price .discount s {
   font-size: 14px;
   opacity: 0.5;
 }
 
+@media screen and (max-width: 500px) {
+  .course-details > div.price .course-price .discount s {
+    font-size: 12px;
+  }
+}
+
 .course-details > div.price .course-price .discount span {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   background-color: #DB4646;
   border-radius: 1.5em;
+  margin-right: 5px;
   font-size: 12px;
+  text-align: center;
   padding: 0 0.5em;
+}
+
+@media screen and (max-width: 500px) {
+  .course-details > div.price .course-price .discount span {
+    font-size: 10px;
+  }
 }
 
 .course-details > div.price .course-price strong {
   font-size: 1.5em;
+}
+
+@media screen and (max-width: 500px) {
+  .course-details > div.price .course-price strong {
+    font-size: 1em;
+  }
 }
 
 .course-details > div.price .course-price strong sub {
@@ -356,6 +429,12 @@ html {
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
+@media screen and (max-width: 500px) {
+  .course-details > div.master strong a svg {
+    display: none;
+  }
+}
+
 .course-details > div.master strong a:hover {
   color: #31CF2E;
 }
@@ -367,11 +446,24 @@ html {
 
 .course-details > div svg {
   width: 6%;
+  min-width: 20px;
   margin-left: 1em;
 }
 
 .course-details > div span {
   width: 50%;
+}
+
+@media screen and (max-width: 500px) {
+  .course-details > div span {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .course-details > div strong {
+    font-size: 12px;
+  }
 }
 
 .course-details a {
@@ -418,8 +510,20 @@ html {
   text-decoration: none;
 }
 
+@media screen and (max-width: 500px) {
+  .tags ul li a, .requirments ul li a, .share ul li a {
+    font-size: 12px;
+  }
+}
+
 .share ul li {
   max-width: 40px;
+}
+
+@media screen and (max-width: 500px) {
+  .share ul li {
+    max-width: 20px;
+  }
 }
 
 .share ul li a svg {
@@ -452,9 +556,21 @@ a[href='#comments'] svg {
   margin: 0.5em 0;
 }
 
+@media screen and (max-width: 500px) {
+  .course-description h3 {
+    font-size: 16px;
+  }
+}
+
 .course-description p {
   font-size: 14px;
   margin: 0.5em;
+}
+
+@media screen and (max-width: 500px) {
+  .course-description p {
+    font-size: 12px;
+  }
 }
 
 .course-videos ul.videos {
@@ -481,6 +597,13 @@ a[href='#comments'] svg {
   padding: 0.5em;
   border: 2px solid #6A62FE;
   border-radius: 0.5em;
+}
+
+@media screen and (max-width: 500px) {
+  .course-videos ul.videos li {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .course-videos ul.videos li span.counter {
@@ -617,6 +740,12 @@ a.tooltip:hover::after {
   margin: 0.5em;
 }
 
+@media screen and (max-width: 500px) {
+  .course-comments .not-authenticated {
+    font-size: 12px;
+  }
+}
+
 .course-comments .not-authenticated svg {
   margin-left: 0.5em;
 }
@@ -692,6 +821,12 @@ a.tooltip:hover::after {
   }
 }
 
+@media screen and (max-width: 500px) {
+  .course-comments .add-comment form > div:last-child div {
+    font-size: 12px;
+  }
+}
+
 .course-comments .add-comment form > div:last-child div {
   width: 60%;
   display: -webkit-box;
@@ -740,13 +875,18 @@ a.tooltip:hover::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   border: 2px solid #fff;
   border-radius: 1em;
   padding: 1em;
+}
+
+@media screen and (max-width: 500px) {
+  .course-comments ul.comments li.comment div.commtent-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .course-comments ul.comments li.comment div.commtent-content img {
@@ -754,6 +894,13 @@ a.tooltip:hover::after {
   height: 60px;
   border-radius: 50%;
   margin-left: 1em;
+}
+
+@media screen and (max-width: 500px) {
+  .course-comments ul.comments li.comment div.commtent-content img {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .course-comments ul.comments li.comment div.commtent-content div.comment-main {
@@ -777,6 +924,18 @@ a.tooltip:hover::after {
   padding-bottom: 0.5em;
 }
 
+@media screen and (max-width: 500px) {
+  .course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
 .course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top div.send-info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -785,6 +944,12 @@ a.tooltip:hover::after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media screen and (max-width: 500px) {
+  .course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top div.send-info {
+    font-size: 14px;
+  }
 }
 
 .course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top div.actions {
@@ -798,6 +963,12 @@ a.tooltip:hover::after {
 
 .course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-body {
   margin: 0.5em;
+}
+
+@media screen and (max-width: 500px) {
+  .course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-body {
+    font-size: 12px;
+  }
 }
 
 .course-comments ul.comments li.comment ul {

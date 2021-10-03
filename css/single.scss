@@ -7,10 +7,16 @@ html{
 .single-header{
     display: flex;
     align-items: center;
+    @media screen and (max-width:500px){
+        h2{
+            font-size: 20px;
+        }
+    }
 }
 
 
 #shortLink{
+    max-width: 95%;
     border: 2px solid $primaryColor;
     border-radius: 0.5em;
     position: relative;
@@ -19,10 +25,21 @@ html{
     align-items: center;
     & > svg{
         margin-left: 0.5em;
+        @media screen and (max-width:500px){
+            max-width: 16px;
+        }
+    }
+    strong{
+        @media screen and (max-width:500px){
+            font-size: 14px;
+        }
     }
     .shortLink{
         margin-right: 1em;
         font-family: 'Montserrat';
+        @media screen and (max-width:500px){
+            font-size: 14px;
+        }
     }
     button{
         position: absolute;
@@ -58,6 +75,9 @@ html{
                         width: 100%;
                         display: flex;
                         margin-bottom: 0.5em;
+                        @media screen and (max-width:500px){
+                            flex-wrap: wrap;
+                        }
                         div{
                             margin-right: auto;
                             font-size: 14px;
@@ -92,19 +112,36 @@ html{
                 flex-direction: column;
                 align-items: center;
                 .discount{
+                    display: flex;
+                    @media screen and (max-width:500px){
+                        flex-direction: column-reverse;
+                    }
+                    align-items: center;
                     s{
                         font-size: 14px;
                         opacity: 0.5;
+                        @media screen and (max-width:500px){
+                            font-size: 12px;
+                        }
                     }
                     span{
+                        width: fit-content;
                         background-color: $dangerColor;
                         border-radius: 1.5em;
+                        margin-right: 5px;
                         font-size: 12px;
+                        text-align: center;
+                        @media screen and (max-width:500px){
+                            font-size: 10px;
+                        }
                         padding: 0 0.5em;
                     }
                 }
                 strong{
                     font-size: 1.5em;
+                    @media screen and (max-width:500px){
+                        font-size: 1em;
+                    }
                     sub{
                         margin-right: 5px;
                     }
@@ -122,6 +159,9 @@ html{
                     margin: 0;padding: 0;
                     svg{
                         margin-right: 10px;
+                        @media screen and (max-width:500px){
+                            display: none;
+                        }
                         transition: transform 0.3s;
                     }
                     &:hover{
@@ -135,17 +175,25 @@ html{
         }
         & svg{
             width: 6%;
+            min-width: 20px;
             margin-left: 1em;
         }
         span{
             width: 50%;
+            @media screen and (max-width:500px){
+                font-size: 12px;
+            }
+        }
+        strong{
+            @media screen and (max-width:500px){
+                font-size: 12px;
+            }
         }
     }
     a{
         margin: 0.5em 0;
         padding: 0.5em 0;
         border-radius: 0.5em;
-        
     }
 }
 
@@ -169,6 +217,9 @@ html{
             a{
                 color: #fff;
                 text-decoration: none;
+                @media screen and (max-width:500px){
+                    font-size: 12px;
+                }
             }
         }
     }
@@ -177,6 +228,9 @@ html{
     ul{
         li{
             max-width: 40px;
+            @media screen and (max-width:500px){
+                max-width: 20px;
+            }
             a{
                 svg{
                     width: 100%;
@@ -203,10 +257,16 @@ a[href='#comments']{
     }
     h3{
         margin: 0.5em 0;
+        @media screen and (max-width:500px){
+            font-size: 16px;
+        }
     }
     p{
         font-size: 14px;
         margin: 0.5em;
+        @media screen and (max-width:500px){
+            font-size: 12px;
+        }
     }
 }
 
@@ -224,6 +284,9 @@ a[href='#comments']{
             padding: 0.5em;
             border: 2px solid $primaryColor;
             border-radius: 0.5em;
+            @media screen and (max-width:500px){
+                flex-wrap: wrap;
+            }
             span.counter{
                 @media screen and (max-width:600px){
                     width: 20px;
@@ -323,6 +386,9 @@ a.tooltip{
         display: flex;
         align-items: center;
         margin: 0.5em;
+        @media screen and (max-width:500px){
+            font-size: 12px;
+        }
         svg{
             margin-left: 0.5em;
         }
@@ -367,6 +433,11 @@ a.tooltip{
                             margin: 0.5em 0;
                         }
                     }
+                    @media screen and (max-width:500px){
+                        div{
+                            font-size: 12px;
+                        }
+                    }
                     div{
                         width: 60%;
                         display: flex;
@@ -396,13 +467,19 @@ a.tooltip{
             margin-bottom: 0.5em;
             div.commtent-content{
                 display: flex;
-                flex-direction: row;
+                @media screen and (max-width:500px){
+                    flex-direction: column;
+                }
                 border: 2px solid #fff;
                 border-radius: 1em;
                 padding: 1em;
                 img{
                     width: 60px;
                     height: 60px;
+                    @media screen and (max-width:500px){
+                        width: 50px;
+                        height: 50px;
+                    }
                     border-radius: 50%;
                     margin-left: 1em;
                 }
@@ -412,11 +489,18 @@ a.tooltip{
                     div.comment-top{
                         display: flex;
                         align-items: center;
+                        @media screen and (max-width:500px){
+                            flex-direction: column-reverse;
+                            align-items: flex-start;
+                        }
                         border-bottom: 1px solid rgba($color: #fff, $alpha: 0.5);
                         padding-bottom: 0.5em;
                         div.send-info{
                             display: flex;
                             flex-direction: column;
+                            @media screen and (max-width:500px){
+                                font-size: 14px;
+                            }
                         }
                         div.actions{
                             margin-right: auto;
@@ -428,6 +512,9 @@ a.tooltip{
                     }
                     div.comment-body{
                         margin: 0.5em;
+                        @media screen and (max-width:500px){
+                            font-size: 12px;
+                        }
                     }
                 }
             }

@@ -583,11 +583,17 @@ main.content{
                 svg{
                     right: 1.5em;
                     opacity: 0.7;
+                    @media screen and (max-width:500px){
+                        width: 20px;
+                    }
                 }
                 button{
                     left: 2em;
                     cursor: pointer;
                     font-family: 'vazir fd';
+                    @media screen and (max-width:500px){
+                        font-size: 12px;
+                    }
                 }
             }
             div:last-child{
@@ -598,6 +604,9 @@ main.content{
                 ul{
                     li{
                         margin: 5px 0;
+                        @media screen and (max-width:500px){
+                            font-size: 12px;
+                        }
                         a{
                             text-decoration: none;
                             color: #fff;
@@ -656,6 +665,9 @@ main.content{
             }
             h4{
                 margin: 0;
+                @media screen and (max-width:500px){
+                    font-size: 14px;
+                }
             }
         }
     }
@@ -694,7 +706,7 @@ main.content{
 }
 
 .breadcrumb{
-    margin: 1em;
+    margin: 1em 0;
     display: flex;
     ol{
         display: flex;
