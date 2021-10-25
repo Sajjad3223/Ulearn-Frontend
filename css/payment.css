@@ -15,6 +15,13 @@
   color: #fff;
 }
 
+@media screen and (max-width: 400px) {
+  .payment-result {
+    font-size: 14px !important;
+    text-align: center;
+  }
+}
+
 .payment-result svg {
   margin-bottom: 1em;
 }

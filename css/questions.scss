@@ -2,6 +2,8 @@
 
 .main-question{
     .title{
+        display: flex;
+        flex-wrap: wrap;
         margin: 1em;
         .quetions-count{
             margin-right: auto;
@@ -22,6 +24,9 @@
                 width: 100%;
                 display: flex;
                 align-items: center;
+                @media screen and (max-width:600px){
+                    flex-direction: column;
+                }
                 .searchbox{
                     width: 50%;
                     input{
@@ -40,6 +45,15 @@
                     }
                     input:checked ~ label{
                         background-color: $primaryColor;
+                    }
+                }
+                @media screen and (max-width:600px){
+                    & > div{
+                        width: 100% !important;
+                        &.toggle{
+                            margin-right: 0;
+                            margin-top: 1em ;
+                        }
                     }
                 }
             }
@@ -65,6 +79,7 @@
                 display: flex;
                 align-items: center;
                 margin-left: 1em;
+                flex-wrap: wrap;
 
                 padding: 0.5em 0;
                 border-bottom: 1px solid rgba($color: #fff, $alpha: 0.3);
@@ -117,7 +132,7 @@
                     align-items: center;
                     justify-content: space-between;
                     height: 80px;
-                    margin-right: auto;
+                    margin: 0 auto;
                     svg{
                         height: 40px;
                     }
@@ -144,8 +159,13 @@
                 margin: 2em 0;
                 display: flex;
                 align-items: flex-start;
+                flex-wrap: wrap;
                 & > a{
                     margin: 1em;
+                    @media screen and (max-width:600px){
+                        margin: 0;
+                        margin-bottom: 0.2em;
+                    }
                 }
             }
         }
@@ -157,6 +177,9 @@
             border-radius: 1em;
             border: 2px solid #fff;
             color: #fff;
+            @media screen and (max-width:400px){
+                flex-direction: column-reverse;
+            }
             &.user-question{
                 border-color: $primaryColor;
                 margin-bottom: 2em;
@@ -169,6 +192,13 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    @media screen and (max-width:400px){
+                        flex-direction: row;
+                        margin-top: 1em;
+                        img{
+                            max-width: 50px;
+                        }
+                    }
                 }
             }
             img{
@@ -181,6 +211,9 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                @media screen and (max-width:400px){
+                    flex-direction: row-reverse;
+                }
                 button{
                     background-color: transparent;
                     border: none;
@@ -195,6 +228,9 @@
                     &:first-of-type{
                         display: flex;
                         flex-direction: column;
+                        @media screen and (max-width:400px){
+                            font-size: 14px;
+                        }
                         small{
                             opacity: 0.6;
                         }
@@ -214,6 +250,9 @@
             .body{
                 p{
                     font-size: 14px;
+                    @media screen and (max-width:400px){
+                        font-size: 12px;
+                    }
                 }
             }
         }
@@ -222,6 +261,9 @@
     .add-answer,.add-question{
         background-color: $cardBackground;
         padding: 1em 2em;
+        @media screen and (max-width:400px){
+            padding: 1em;
+        }
         border-radius: 1em;
         color: #fff;
         hr{
@@ -279,7 +321,7 @@
     border-radius: 1em;
     padding: 1em;
     color: #fff;
-    max-height: 500px;
+    
     hr{
         margin: 1em 0;
     }
@@ -287,6 +329,7 @@
         display: flex;
         flex-direction: column;
         list-style: none;
+        max-height: 500px;
         @include scrollbar();
         overflow-y: auto;
         li.question-overview{
@@ -300,6 +343,7 @@
             padding: 1em 0;
             margin: 0 0.5em;
             display: flex;
+            flex-wrap: wrap;
             &:hover{
                 & > div{
                     &:first-of-type{
@@ -310,6 +354,7 @@
             & > div{
                 display: flex;
                 flex-direction: column;
+                
                 &:first-of-type{
                     width: 1px;
                     background-color: #fff;
@@ -343,6 +388,9 @@
                 }
                 &.question-details{
                     margin-right: auto;
+                    @media screen and (max-width:400px){
+                        flex-direction: row;
+                    }
                     & > div{
                         display: flex;
                         align-items: center;

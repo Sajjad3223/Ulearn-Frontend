@@ -183,7 +183,7 @@ input[type=checkbox]:not(input#change-form):checked::after {
   opacity: 1;
 }
 
-input[type=radio] {
+input[type=radio].radio {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -199,15 +199,15 @@ input[type=radio] {
   transition: background-color .3s;
 }
 
-input[type=radio]:hover {
+input[type=radio].radio:hover {
   border-color: #fff;
 }
 
-input[type=radio]:checked {
+input[type=radio].radio:checked {
   background-color: #6A62FE;
 }
 
-input[type=radio]:checked:before {
+input[type=radio].radio:checked:before {
   width: 8px;
   height: 8px;
   position: absolute;

@@ -183,7 +183,7 @@ input[type=checkbox]:not(input#change-form):checked::after {
   opacity: 1;
 }
 
-input[type=radio] {
+input[type=radio].radio {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -199,15 +199,15 @@ input[type=radio] {
   transition: background-color .3s;
 }
 
-input[type=radio]:hover {
+input[type=radio].radio:hover {
   border-color: #fff;
 }
 
-input[type=radio]:checked {
+input[type=radio].radio:checked {
   background-color: #6A62FE;
 }
 
-input[type=radio]:checked:before {
+input[type=radio].radio:checked:before {
   width: 8px;
   height: 8px;
   position: absolute;
@@ -362,6 +362,12 @@ input[type=radio]:checked:before {
           align-items: stretch;
 }
 
+@media screen and (max-width: 400px) {
+  .cart div.cart-summary {
+    font-size: 14px;
+  }
+}
+
 .cart div.cart-summary hr {
   margin: 1em 0;
 }
@@ -502,6 +508,12 @@ input[type=radio]:checked:before {
   }
 }
 
+@media screen and (max-width: 400px) {
+  .cart div.cart-items .cart-body ul.items li {
+    font-size: 12px !important;
+  }
+}
+
 .cart div.cart-items .cart-body ul.items li > a {
   display: -ms-grid;
   display: grid;
@@ -513,6 +525,12 @@ input[type=radio]:checked:before {
   border-radius: 0.5em;
 }
 
+@media screen and (max-width: 400px) {
+  .cart div.cart-items .cart-body ul.items li img {
+    max-width: 100%;
+  }
+}
+
 .cart div.cart-items .cart-body ul.items li .column {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -521,6 +539,12 @@ input[type=radio]:checked:before {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media screen and (max-width: 400px) {
+  .cart div.cart-items .cart-body ul.items li .column {
+    margin: 0.5em;
+  }
 }
 
 .cart div.cart-items .cart-body ul.items li .column a {
@@ -535,6 +559,13 @@ input[type=radio]:checked:before {
 
 .cart div.cart-items .cart-body ul.items li .column span sub {
   font-size: 12px;
+}
+
+@media screen and (max-width: 400px) {
+  .cart div.cart-items .cart-body ul.items li a.delete-item {
+    width: 100%;
+    margin-top: 1em;
+  }
 }
 
 .cart-empty {

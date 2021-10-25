@@ -14,6 +14,9 @@
         display: flex;
         flex-direction: column;
         align-items: stretch;
+        @media screen and (max-width:400px){
+            font-size: 14px;
+        }
         
         hr{
             margin: 1em 0;
@@ -89,6 +92,7 @@
                 @include scrollbar();
                 max-height: 400px;
                 overflow-y: auto;
+                
                 li{
                     display: flex;
                     align-items: center;
@@ -101,6 +105,9 @@
                     @media screen and (max-width:600px) {
                         flex-wrap: wrap;
                     }
+                    @media screen and (max-width:400px){
+                        font-size: 12px !important;
+                    }
                     & > a{
                         display: grid;
                         place-items: center;
@@ -108,8 +115,14 @@
                     img{
                         max-width: 80px;
                         border-radius: 0.5em;
+                        @media screen and (max-width:400px){
+                            max-width: 100%;
+                        }
                     }
                     .column{
+                        @media screen and (max-width:400px){
+                            margin: 0.5em;
+                        }
                         a{
                             text-decoration: none;
                             color: #fff;
@@ -124,6 +137,13 @@
                             }
                         }
                     }
+                    @media screen and (max-width:400px){
+                        a.delete-item{
+                            width: 100%;
+                            margin-top: 1em;
+                        }
+                    }
+                    
                 }
             }
         }

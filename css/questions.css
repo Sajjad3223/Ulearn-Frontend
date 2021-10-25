@@ -183,7 +183,7 @@ input[type=checkbox]:not(input#change-form):checked::after {
   opacity: 1;
 }
 
-input[type=radio] {
+input[type=radio].radio {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -199,15 +199,15 @@ input[type=radio] {
   transition: background-color .3s;
 }
 
-input[type=radio]:hover {
+input[type=radio].radio:hover {
   border-color: #fff;
 }
 
-input[type=radio]:checked {
+input[type=radio].radio:checked {
   background-color: #6A62FE;
 }
 
-input[type=radio]:checked:before {
+input[type=radio].radio:checked:before {
   width: 8px;
   height: 8px;
   position: absolute;
@@ -332,6 +332,11 @@ input[type=radio]:checked:before {
 }
 
 .main-question .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 1em;
 }
 
@@ -375,6 +380,15 @@ input[type=radio]:checked:before {
           align-items: center;
 }
 
+@media screen and (max-width: 600px) {
+  .main-question .questions .top-header .questions-filter {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .main-question .questions .top-header .questions-filter .searchbox {
   width: 50%;
 }
@@ -398,6 +412,16 @@ input[type=radio]:checked:before {
 
 .main-question .questions .top-header .questions-filter .toggle input:checked ~ label {
   background-color: #6A62FE;
+}
+
+@media screen and (max-width: 600px) {
+  .main-question .questions .top-header .questions-filter > div {
+    width: 100% !important;
+  }
+  .main-question .questions .top-header .questions-filter > div.toggle {
+    margin-right: 0;
+    margin-top: 1em;
+  }
 }
 
 .main-question .questions .top-header > a {
@@ -455,6 +479,8 @@ input[type=radio]:checked:before {
       -ms-flex-align: center;
           align-items: center;
   margin-left: 1em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 0.5em 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
@@ -545,7 +571,7 @@ input[type=radio]:checked:before {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 80px;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .main-question .questions ul.questions-list .question .solved svg {
@@ -587,10 +613,19 @@ input[type=radio]:checked:before {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .main-question .q-a ul.answers li.answer > a {
   margin: 1em;
+}
+
+@media screen and (max-width: 600px) {
+  .main-question .q-a ul.answers li.answer > a {
+    margin: 0;
+    margin-bottom: 0.2em;
+  }
 }
 
 .main-question .q-a .message {
@@ -604,6 +639,15 @@ input[type=radio]:checked:before {
   border-radius: 1em;
   border: 2px solid #fff;
   color: #fff;
+}
+
+@media screen and (max-width: 400px) {
+  .main-question .q-a .message {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
 }
 
 .main-question .q-a .message.user-question {
@@ -628,6 +672,19 @@ input[type=radio]:checked:before {
           align-items: center;
 }
 
+@media screen and (max-width: 400px) {
+  .main-question .q-a .message > div:first-child {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-top: 1em;
+  }
+  .main-question .q-a .message > div:first-child img {
+    max-width: 50px;
+  }
+}
+
 .main-question .q-a .message img {
   border-radius: 50%;
   border: 2px solid #fff;
@@ -646,6 +703,15 @@ input[type=radio]:checked:before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media screen and (max-width: 400px) {
+  .main-question .q-a .message .votes {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
 }
 
 .main-question .q-a .message .votes button {
@@ -673,6 +739,12 @@ input[type=radio]:checked:before {
           flex-direction: column;
 }
 
+@media screen and (max-width: 400px) {
+  .main-question .q-a .message .top > div:first-of-type {
+    font-size: 14px;
+  }
+}
+
 .main-question .q-a .message .top > div:first-of-type small {
   opacity: 0.6;
 }
@@ -694,11 +766,23 @@ input[type=radio]:checked:before {
   font-size: 14px;
 }
 
+@media screen and (max-width: 400px) {
+  .main-question .q-a .message .body p {
+    font-size: 12px;
+  }
+}
+
 .main-question .add-answer, .main-question .add-question {
   background-color: #0B1E33;
   padding: 1em 2em;
   border-radius: 1em;
   color: #fff;
+}
+
+@media screen and (max-width: 400px) {
+  .main-question .add-answer, .main-question .add-question {
+    padding: 1em;
+  }
 }
 
 .main-question .add-answer hr, .main-question .add-question hr {
@@ -770,7 +854,6 @@ input[type=radio]:checked:before {
   border-radius: 1em;
   padding: 1em;
   color: #fff;
-  max-height: 500px;
 }
 
 .last-qestions hr {
@@ -786,6 +869,7 @@ input[type=radio]:checked:before {
       -ms-flex-direction: column;
           flex-direction: column;
   list-style: none;
+  max-height: 500px;
   /* width */
   /* Track */
   /* Handle */
@@ -819,6 +903,8 @@ input[type=radio]:checked:before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .last-qestions ul.questions-list li.question-overview:last-child {
@@ -882,6 +968,15 @@ input[type=radio]:checked:before {
 
 .last-qestions ul.questions-list li.question-overview > div.question-details {
   margin-right: auto;
+}
+
+@media screen and (max-width: 400px) {
+  .last-qestions ul.questions-list li.question-overview > div.question-details {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 .last-qestions ul.questions-list li.question-overview > div.question-details > div {
