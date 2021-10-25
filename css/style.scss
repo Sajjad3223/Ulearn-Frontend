@@ -219,8 +219,14 @@ main.content{
                 max-height: 360px;
                 position: absolute;
                 top: -5em;
+                @media screen and(max-width:768px){
+                    max-height: 70vw;
+                    bottom: 0;
+                    top: inherit;
+                }
                 z-index: 3;
                 transition: transform 5s ease-out;
+
                 &.icon{
                     height: 170px;
                     top: 10%;
@@ -246,6 +252,9 @@ main.content{
             &:hover{
                 img:not(.icon){
                     transform: translateX(-50px);
+                    @media screen and(max-width:768px){
+                        transform: translateX(-10px);
+                    }
                 }
             }
 
@@ -278,6 +287,9 @@ main.content{
             &:hover{
                 img:not(.icon){
                     transform: translate(40px,-20px) rotate(10deg);
+                    @media screen and(max-width:768px){
+                        transform: translate(20px,-10px) rotate(10deg);
+                    }
                 }
             }
 
@@ -371,6 +383,7 @@ main.content{
             transition: transform 0.3s;
             svg{
                 opacity: 0.5;
+                max-width: 20px;
             }
             &:hover{
                 transform: translateY(-15px);
@@ -404,6 +417,7 @@ main.content{
                         border: $cardBackground 5px solid;
                         img{
                             border-radius: 50%;
+                            transition:transform 0.3s;
                         }
                         &::after{
                             height: 30px;
@@ -426,6 +440,9 @@ main.content{
                             &::after{
                                 transform: translate(-50%,-50%);
                                 opacity: 1;
+                            }
+                            img{
+                                transform: scale(1.15);
                             }
                         }
                     }
@@ -583,6 +600,7 @@ main.content{
                 svg{
                     right: 1.5em;
                     opacity: 0.7;
+                    width: 20px;
                     @media screen and (max-width:500px){
                         width: 20px;
                     }
@@ -712,10 +730,11 @@ main.content{
         display: flex;
         list-style: none;
         align-items: center;
+        flex-wrap: wrap;
         li{
             display: flex;
             align-items: center;
-            margin: 0 0.5em;
+            margin: 0.5em;
             @media screen and (max-width:600px){
                 font-size: 12px;
             }
@@ -884,7 +903,7 @@ main.content{
         svg{
             stroke: $ctaColor;
         }
-        &:first-child{
+        &:first-child:not(.disabled){
             &:hover{
                 transform: translateX(5px);
             }
@@ -893,6 +912,9 @@ main.content{
             &:hover{
                 transform: translateX(-5px);
             }
+        }
+        &.disabled{
+            opacity: 0.3;
         }
     }
     ul{
@@ -909,10 +931,11 @@ main.content{
                 padding: 0 0.5em;
                 &.active{
                     position: relative;
-                    &::before{
+                    z-index: 3;
+                    &::after{
                         content: "";
                         position: absolute;
-                        background-color: $sidebarBackgroundColor;
+                        background-color: rgba($color: #000000, $alpha: 0.5);
                         top: 50%;
                         left: 50%;
                         width: 40px;
@@ -926,4 +949,10 @@ main.content{
             }
         }
     }
+}
+
+.dashed-separator{
+    margin: 1em 0;
+    border-top: 1px dashed #fff;
+    opacity: 0.5;
 }

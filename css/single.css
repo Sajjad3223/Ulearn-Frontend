@@ -17,6 +17,11 @@
   cursor: pointer;
 }
 
+.btn.btn-sm {
+  font-size: 12px;
+  padding: 0.3em;
+}
+
 .btn .btn-link {
   background-color: transparent;
   color: #6A62FE !important;
@@ -133,7 +138,7 @@
   border: 2px solid #52FF00;
 }
 
-input[type=checkbox] {
+input[type=checkbox]:not(input#change-form) {
   position: relative;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -145,7 +150,7 @@ input[type=checkbox] {
   margin-left: 0.5em;
 }
 
-input[type=checkbox]::before, input[type=checkbox]::after {
+input[type=checkbox]:not(input#change-form)::before, input[type=checkbox]:not(input#change-form)::after {
   content: "";
   display: block;
   background-size: cover;
@@ -161,21 +166,169 @@ input[type=checkbox]::before, input[type=checkbox]::after {
   transition: opacity 0.5s;
 }
 
-input[type=checkbox]::before {
+input[type=checkbox]:not(input#change-form)::before {
   background-image: url("../imgs/Unckecked.svg");
 }
 
-input[type=checkbox]::after {
+input[type=checkbox]:not(input#change-form)::after {
   background-image: url("../imgs/Checked.svg");
   opacity: 0;
 }
 
-input[type=checkbox]:checked::before {
+input[type=checkbox]:not(input#change-form):checked::before {
   opacity: 0;
 }
 
-input[type=checkbox]:checked::after {
+input[type=checkbox]:not(input#change-form):checked::after {
   opacity: 1;
+}
+
+input[type=radio] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 2px solid #6A62FE;
+  background-color: transparent;
+  outline: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+}
+
+input[type=radio]:hover {
+  border-color: #fff;
+}
+
+input[type=radio]:checked {
+  background-color: #6A62FE;
+}
+
+input[type=radio]:checked:before {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background-color: #081626;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.icon-input svg {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 0.5;
+  width: 15px;
+}
+
+.icon-input svg.show-password, .icon-input svg.hide-password {
+  display: none;
+  right: 1.5em;
+  pointer-events: all;
+  cursor: pointer;
+  opacity: 1;
+  width: 20px;
+}
+
+.icon-input svg.show-password.hide-password, .icon-input svg.hide-password.hide-password {
+  display: none;
+}
+
+.icon-input label {
+  margin-right: 1.5em;
+}
+
+.float-input {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.float-input input {
+  height: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #fff;
+  padding: 0.5em 1em;
+  color: #fff;
+  direction: ltr;
+  font-family: 'montserrat';
+  font-size: 1em;
+  -webkit-transition: border 0.3s;
+  transition: border 0.3s;
+}
+
+.float-input input::-ms-reveal, .float-input input::-ms-clear {
+  display: none;
+}
+
+.float-input input:valid ~ svg.show-password {
+  display: block;
+}
+
+.float-input input:valid, .float-input input:focus {
+  border-bottom: 3px solid #6A62FE;
+}
+
+.float-input input:valid ~ label, .float-input input:focus ~ label {
+  -webkit-transform: translate(1.5em, -1.5em);
+          transform: translate(1.5em, -1.5em);
+  font-size: 14px;
+  opacity: 50%;
+}
+
+.float-input label {
+  position: absolute;
+  -webkit-transition: font-size 0.3s,opacity 0.3s, -webkit-transform 0.3s;
+  transition: font-size 0.3s,opacity 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, font-size 0.3s,opacity 0.3s;
+  transition: transform 0.3s, font-size 0.3s,opacity 0.3s, -webkit-transform 0.3s;
+}
+
+.float-input span.validation-text {
+  position: absolute;
+  top: -2em;
+  left: 0;
+  font-size: 14px;
+  color: #DB4646;
+  pointer-events: none;
+}
+
+.badge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 1em;
+  padding: 0.2em 0.7em;
+  font-size: 12px;
+  margin: 0 0.5em;
+}
+
+.badge.badge-warning {
+  background-color: #52FF00;
+  color: #000;
 }
 
 html {
@@ -422,7 +575,7 @@ html {
 }
 
 .course-details > div.master strong a svg {
-  margin-right: 10px;
+  margin-right: 5px;
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
@@ -585,7 +738,86 @@ a[href='#comments'] svg {
   list-style: none;
 }
 
-.course-videos ul.videos li {
+.course-videos ul.videos li:first-child {
+  margin: 0.5em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .course-videos ul.videos li:first-child {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.course-videos ul.videos li:first-child div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #31CF2E;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 600px) {
+  .course-videos ul.videos li:first-child div {
+    font-size: 12px;
+  }
+}
+
+.course-videos ul.videos li:first-child div span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.course-videos ul.videos li:first-child div span svg {
+  margin-left: 5px;
+}
+
+.course-videos ul.videos li:first-child div a {
+  margin-right: 0.5em;
+}
+
+.course-videos ul.videos li:first-child > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-size: 14px;
+  color: #fff;
+  margin: 0.5em auto;
+  text-decoration: none;
+}
+
+.course-videos ul.videos li:first-child > a:hover svg {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+
+.course-videos ul.videos li:first-child > a svg {
+  margin-right: 5px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.course-videos ul.videos li.video {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -600,13 +832,13 @@ a[href='#comments'] svg {
 }
 
 @media screen and (max-width: 500px) {
-  .course-videos ul.videos li {
+  .course-videos ul.videos li.video {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
 }
 
-.course-videos ul.videos li span.counter {
+.course-videos ul.videos li.video span.counter {
   width: 35px;
   height: 35px;
   display: -ms-grid;
@@ -618,7 +850,7 @@ a[href='#comments'] svg {
 }
 
 @media screen and (max-width: 600px) {
-  .course-videos ul.videos li span.counter {
+  .course-videos ul.videos li.video span.counter {
     width: 20px;
     height: 20px;
     font-size: 12px;
@@ -626,17 +858,17 @@ a[href='#comments'] svg {
 }
 
 @media screen and (max-width: 600px) {
-  .course-videos ul.videos li strong {
+  .course-videos ul.videos li.video strong {
     font-size: 12px;
   }
 }
 
-.course-videos ul.videos li strong a {
+.course-videos ul.videos li.video strong a {
   text-decoration: none;
   color: #fff;
 }
 
-.course-videos ul.videos li div.actions {
+.course-videos ul.videos li.video div.actions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -650,17 +882,17 @@ a[href='#comments'] svg {
   margin-right: auto;
 }
 
-.course-videos ul.videos li div.actions span.video-time {
+.course-videos ul.videos li.video div.actions span.video-time {
   margin: 0 0.5em;
 }
 
 @media screen and (max-width: 600px) {
-  .course-videos ul.videos li div.actions span.video-time {
+  .course-videos ul.videos li.video div.actions span.video-time {
     font-size: 12px;
   }
 }
 
-.course-videos ul.videos li div.actions a {
+.course-videos ul.videos li.video div.actions a {
   margin: 0 0.2em;
   width: 35px;
   height: 35px;
@@ -672,29 +904,29 @@ a[href='#comments'] svg {
 }
 
 @media screen and (max-width: 600px) {
-  .course-videos ul.videos li div.actions a {
+  .course-videos ul.videos li.video div.actions a {
     width: 25px;
     height: 25px;
   }
-  .course-videos ul.videos li div.actions a svg {
+  .course-videos ul.videos li.video div.actions a svg {
     width: 15px;
     height: 15px;
   }
 }
 
-.course-videos ul.videos li div.actions a.download-video {
+.course-videos ul.videos li.video div.actions a.download-video {
   background-color: #6A62FE;
 }
 
-.course-videos ul.videos li div.actions a.watch-online {
+.course-videos ul.videos li.video div.actions a.watch-online {
   border: 2px solid #3B9950;
 }
 
-.course-videos ul.videos li div.actions a.download-video-files {
+.course-videos ul.videos li.video div.actions a.download-video-files {
   border: 2px solid #31CF2E;
 }
 
-.course-videos ul.videos li div.actions a.video-locked {
+.course-videos ul.videos li.video div.actions a.video-locked {
   background-color: #DB4646;
 }
 
@@ -752,6 +984,31 @@ a.tooltip:hover::after {
 
 .course-comments .add-comment {
   width: 100%;
+}
+
+.course-comments .add-comment .replay {
+  display: none;
+}
+
+.course-comments .add-comment .replay .replay-message {
+  background-color: #DB4646;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+.course-comments .add-comment .replay .replay-message svg {
+  min-width: 22px;
+  margin: 0.5em;
+}
+
+.course-comments .add-comment .replay .replay-message strong {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.course-comments .add-comment .replay .replay-message p {
+  font-size: 12px;
+  font-style: italic;
 }
 
 .course-comments .add-comment form {
@@ -953,10 +1210,19 @@ a.tooltip:hover::after {
 }
 
 .course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top div.actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-right: auto;
 }
 
 .course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top div.actions a {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
   text-decoration: none;
   margin-right: 0.5em;
 }

@@ -1,0 +1,152 @@
+@import 'root';
+
+.cart{
+    flex-direction: row-reverse;
+    color: #fff;
+    img{
+        max-width: 100%;
+    }
+    div.cart-summary{
+        height: fit-content;
+        border: 3px solid $warningColor;
+        border-radius: 1em;
+        padding: 1.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        
+        hr{
+            margin: 1em 0;
+        }
+
+        div.discount{
+            form{
+                display: flex;
+                align-items: stretch;
+                input{
+                    width: 70%;
+                    height: 50px;
+                    appearance: none;
+                    background-color: transparent;
+                    border: 2px solid $primaryColor;
+                    outline: none;
+                    border-radius: 0 1em 1em 0;
+                    font-family: 'vazir fd';
+                    color: #fff;
+                    padding: 0 0.5em;
+                    font-size: 18px;
+                }
+                button{
+                    width: 30%;
+                    height: 54px;
+                    background-color: $primaryColor;
+                    color: #fff;
+                    border-radius: 1em 0 0 1em;
+                    font-family: 'vazir fd';
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        div.prices{
+            div{
+                margin-bottom: 1em;
+                &:last-of-type{
+                    margin-bottom: 0;
+                }
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        div.payment-method{
+            div{
+                margin: 0.5em 0;
+                display: flex;
+                align-items: center;
+                input{
+                    margin-left: 0.5em;
+                }
+            }
+        }
+    }
+
+    div.cart-items{
+        .alert{
+            border-radius: 0.5em;
+            margin: 1em 0;
+        }
+        .cart-body{
+            background-color: $cardBackground;
+            padding: 1em;
+            border-radius: 1em;
+            ul.items{
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                @include scrollbar();
+                max-height: 400px;
+                overflow-y: auto;
+                li{
+                    display: flex;
+                    align-items: center;
+                    padding: 1em;
+                    border: 2px solid $primaryColor;
+                    border-radius: 1em;
+                    justify-content: space-between;
+                    margin-bottom: 1em;
+                    margin-left: 0.5em;
+                    @media screen and (max-width:600px) {
+                        flex-wrap: wrap;
+                    }
+                    & > a{
+                        display: grid;
+                        place-items: center;
+                    }
+                    img{
+                        max-width: 80px;
+                        border-radius: 0.5em;
+                    }
+                    .column{
+                        a{
+                            text-decoration: none;
+                            color: #fff;
+                        }
+                        display: flex;
+                        flex-direction: column;
+                        span{
+                            opacity: 0.7;
+                            font-weight: lighter ;
+                            sub{
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+.cart-empty{
+    margin: 2em auto;
+    width: 50vw;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    h3{
+        margin: 1em 0;
+    }
+    .searchbox{
+        width: 100%;
+        
+    }
+    a{
+        margin-top: 1em;
+    }
+}

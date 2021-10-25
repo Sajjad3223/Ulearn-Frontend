@@ -7,20 +7,13 @@
 }
 
 html{
-    background-image: url(../imgs/SimpleShiny.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     scroll-behavior: smooth;
     font-family: 'vazir fd';
 }
 
 body{
     width: 100vw;
-    background-image: url(../imgs/SimpleShiny.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-color: $backgroundColor;
     direction: rtl;
     overflow-x: hidden;
     padding: 1em 0;

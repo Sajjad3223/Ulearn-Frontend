@@ -1,0 +1,21 @@
+.payment-result{
+    margin: 2em auto;
+    width: 50vw;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    svg{
+        margin-bottom: 1em;
+    }
+    h3{
+        margin: 1em 0;
+    }
+
+    & > div{
+        a{
+            margin: 0 0.5em;
+        }
+    }
+}
