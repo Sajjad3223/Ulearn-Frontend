@@ -1,0 +1,319 @@
+@import 'root';
+
+main{
+    display: flex;
+    flex-direction: column;
+    margin: 2em auto;
+    width: 100% ;
+    max-width: 1280px;
+
+    .breadcrumb{
+        margin-right: 2em;
+    }
+    &>div{
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .user-sidebar{
+        background-color: $cardBackground;
+        border-radius: 1em;
+        padding: 1em;
+        color: #fff;
+        div.top{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            a.logout{
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            & > div{
+                &:first-of-type{
+                    display: grid;
+                    place-items: center;
+                    position: relative;
+                    &:hover{
+                        a{
+                            opacity: .8;
+                            transform: scale(1);
+                        }
+                    }
+                    img{
+                        width: 150px;
+                        height: 150px;
+                        border-radius: 50%;
+                    }
+                    a{
+                        position: absolute;
+                        opacity: 0;
+                        transform: scale(0);
+                        transition: opacity 0.3s , transform 0.3s;
+                    }
+                }
+                &:last-of-type{
+                    display: flex;
+                    align-items: center;
+                    a:hover{
+                        svg{
+                            opacity: 1;
+                        }
+                    }
+                    svg{
+                        opacity: 0.5;
+                        transition: opacity 0.5s;
+                    }
+                }
+            }
+        }
+        ul.options{
+            list-style: none;
+            li{
+                width: 90%;
+                margin: 0.5em 0;
+                padding: 0.5em;
+                border-radius: .5em;
+                &:hover{
+                    background-color: $sidebarBackgroundColor;
+                }
+                &.active{
+                    background-color: $backgroundColor;
+                    position: relative;
+                    &:after{
+                        background-color: $primaryColor;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        bottom: 0;
+                        width: 10px;
+                        content: "";
+                        border-radius: 0.5em 0 0 0.5em;
+                    }
+                }
+                a{
+                    width: 100%;
+                    text-decoration: none;
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                    svg{
+                        margin: 0 1em;
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+    }
+
+    .panel-details{
+        background-color: $cardBackground;
+        border-radius: 1em;
+        padding: 1em;
+        color: #fff;
+        margin-right: auto;
+        & > div{
+            .title{
+                display: flex;
+                align-items: center;
+                h4{
+                    height: 40px;
+                }
+            }
+            hr{
+                margin-bottom: 1em;
+            }
+
+            .user-information{
+                display: flex;
+                flex-direction: column;
+                & > div{
+                    margin: 0 1em;
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-bottom: 0.5em;
+                    .key{
+                        display: flex;
+                        align-items: center;
+                        svg{
+                            margin-left: 0.5em;
+                            opacity: 0.5;
+                        }
+                    }
+                    .value{
+                        margin-right: auto;
+                        display: flex;
+                        align-items: center;
+                        strong{
+                            font-size: 14px;
+                        }
+                        span{
+                            margin-right: 0.5em;
+                            color: $primaryColor;
+                            display: none;
+                        }
+                        
+                        a.badge{
+                            text-decoration: none;
+                            //display: none;
+                        }
+
+                        p{
+                            margin-top: 0.5em;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+            .liked-courses{
+                ul{
+                    list-style: none;
+                    max-height: 250px;
+                    @include scrollbar();
+                    overflow-y: auto;
+                    li{
+                        display: flex;
+                        margin: 1em;
+                    }
+                }
+            }
+            .courses-status{
+                display: flex;
+                flex-wrap: wrap;
+                & > div{
+                    width: 45%;
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0 1em;
+                    margin-bottom: 1em;
+                    a{
+                        margin-bottom: 0.5em;
+                    }
+
+                    progress {
+                        direction: ltr;
+                        border-radius: 1.5em;
+                        width: 100%;
+                        height: 30px;
+                        color: #fff;
+                        position: relative;
+                        &::after{
+                            content: attr(value) " %";
+                            position: absolute;
+                            color: #fff;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%,-50%);
+                        }
+                        --progress-value-bg : blue;
+                        &::-webkit-progress-bar {
+                            background-color: $backgroundColor;
+                            border-radius: 1.5em;
+                            padding: 5px;
+                        }
+                        &::-webkit-progress-value {
+                            background-color: var(--progress-value-bg);
+                            border-radius: 1.5em;
+                        }
+                        &.low{ --progress-value-bg : #{$dangerColor};}
+                        &.medium{--progress-value-bg : #{$warningColor};}
+                        &.high{--progress-value-bg : blue}
+                        &.full{--progress-value-bg : #{$cardBackground};}
+
+                    }
+
+                    div.progress{
+                        width: 100%;
+                        height: 20px;
+                        background-color: $backgroundColor;
+                        border-radius: 1.5em;
+                        position: relative;
+                        &::before{
+                            content: "";
+                            height: 100%;
+                            position: absolute;
+                            border-radius: 1.5em;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            background-color: $warningColor;
+                            width: attr(data-progress em);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modal{
+    
+    .bg{
+        position: absolute;
+        inset: 0;
+        background-color: #000;
+        opacity: 0.5;
+        z-index: -1;
+    }
+    position: fixed;
+    inset:0;
+    z-index: 99999;
+    display: none;
+    place-items: center;
+    .mdal-main{
+        margin: auto;
+        width: 350px;
+        background-color: $cardBackground;
+        padding: 1.5em;
+        border-radius: 1em;
+        color: #fff;
+        .modal-header{
+            display: flex;
+            align-items: center;
+        }
+        hr{
+            margin: 1em 0;
+        }
+        .modal-body{
+            margin: 1em 0.5em;
+            display: flex;
+            flex-direction: column;
+            .phone-number{
+                display: flex;
+                align-items: center;
+                margin-bottom: 1em;
+                strong{
+                    margin-right: auto;
+                }
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+                &> div{
+                    display: flex;
+                    flex-direction: column;
+                    input{
+                        appearance: none;
+                        margin: 1em 0;
+                        padding: 1em;
+                        outline: none;
+                        border: none;
+                        background-color: $backgroundColor;
+                        font-family: 'vazir fd';
+                        color: #fff;
+                        border-radius: 1em;
+                    }
+                    .validation{
+                        color: $dangerColor;
+                        font-size: 14px;
+                    }
+                }
+                button{
+                    margin-top: 1em;
+                    font-family: 'vazir fd';
+                }
+            }
+        }
+    }
+}

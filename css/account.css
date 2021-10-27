@@ -91,6 +91,13 @@
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
+.btn-icon {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+}
+
 .left {
   margin-right: auto;
 }

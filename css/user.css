@@ -1,0 +1,809 @@
+.btn {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  -webkit-transition: background-color 0.3s,-webkit-box-shadow 0.3s;
+  transition: background-color 0.3s,-webkit-box-shadow 0.3s;
+  transition: background-color 0.3s,box-shadow 0.3s;
+  transition: background-color 0.3s,box-shadow 0.3s,-webkit-box-shadow 0.3s;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn.btn-sm {
+  font-size: 12px;
+  padding: 0.3em;
+}
+
+.btn .btn-link {
+  background-color: transparent;
+  color: #6A62FE !important;
+}
+
+.btn.btn-primary {
+  background-color: #6A62FE;
+}
+
+.btn.btn-primary:hover {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn.btn-outline-primary {
+  border: 2px solid #6A62FE;
+  border-radius: 0.5em;
+}
+
+.btn.btn-outline-primary:hover {
+  background-color: #6A62FE;
+}
+
+.btn.btn-success {
+  background-color: #3B9950;
+}
+
+.btn.btn-success:hover {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn.btn-outline-success {
+  border: 2px solid #3B9950;
+  border-radius: 0.5em;
+}
+
+.btn.btn-outline-success:hover {
+  background-color: #3B9950;
+}
+
+.btn.btn-outline-info {
+  border: 2px solid #3E7A99;
+  border-radius: 0.5em;
+}
+
+.btn.btn-outline-info:hover {
+  background-color: #3E7A99;
+}
+
+.btn.btn-cta {
+  background-color: #31CF2E;
+}
+
+.btn.btn-cta:hover {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn.btn-danger {
+  background-color: #DB4646;
+}
+
+.btn.btn-danger:hover {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn-icon {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+}
+
+.left {
+  margin-right: auto;
+}
+
+.text-light {
+  color: #fff;
+}
+
+.text-dark {
+  color: #000;
+}
+
+.text-warning {
+  color: #52FF00;
+}
+
+.text-cta {
+  color: #31CF2E;
+}
+
+.text-primary {
+  color: #6A62FE;
+}
+
+.text-danger {
+  color: #DB4646;
+}
+
+.text-info {
+  color: #3E7A99;
+}
+
+.alert {
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+}
+
+@media screen and (max-width: 600px) {
+  .alert {
+    font-size: 12px;
+  }
+}
+
+.alert.alert-warning {
+  border: 2px solid #52FF00;
+}
+
+input[type=checkbox]:not(input#change-form) {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+  margin-left: 0.5em;
+}
+
+input[type=checkbox]:not(input#change-form)::before, input[type=checkbox]:not(input#change-form)::after {
+  content: "";
+  display: block;
+  background-size: cover;
+  height: 2em;
+  width: 2em;
+  position: absolute;
+  pointer-events: none;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+input[type=checkbox]:not(input#change-form)::before {
+  background-image: url("../imgs/Unckecked.svg");
+}
+
+input[type=checkbox]:not(input#change-form)::after {
+  background-image: url("../imgs/Checked.svg");
+  opacity: 0;
+}
+
+input[type=checkbox]:not(input#change-form):checked::before {
+  opacity: 0;
+}
+
+input[type=checkbox]:not(input#change-form):checked::after {
+  opacity: 1;
+}
+
+input[type=radio].radio {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 2px solid #6A62FE;
+  background-color: transparent;
+  outline: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+}
+
+input[type=radio].radio:hover {
+  border-color: #fff;
+}
+
+input[type=radio].radio:checked {
+  background-color: #6A62FE;
+}
+
+input[type=radio].radio:checked:before {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background-color: #081626;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.icon-input svg {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 0.5;
+  width: 15px;
+}
+
+.icon-input svg.show-password, .icon-input svg.hide-password {
+  display: none;
+  right: 1.5em;
+  pointer-events: all;
+  cursor: pointer;
+  opacity: 1;
+  width: 20px;
+}
+
+.icon-input svg.show-password.hide-password, .icon-input svg.hide-password.hide-password {
+  display: none;
+}
+
+.icon-input label {
+  margin-right: 1.5em;
+}
+
+.float-input {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.float-input input {
+  height: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #fff;
+  padding: 0.5em 1em;
+  color: #fff;
+  direction: ltr;
+  font-family: 'montserrat';
+  font-size: 1em;
+  -webkit-transition: border 0.3s;
+  transition: border 0.3s;
+}
+
+.float-input input::-ms-reveal, .float-input input::-ms-clear {
+  display: none;
+}
+
+.float-input input:valid ~ svg.show-password {
+  display: block;
+}
+
+.float-input input:valid, .float-input input:focus {
+  border-bottom: 3px solid #6A62FE;
+}
+
+.float-input input:valid ~ label, .float-input input:focus ~ label {
+  -webkit-transform: translate(1.5em, -1.5em);
+          transform: translate(1.5em, -1.5em);
+  font-size: 14px;
+  opacity: 50%;
+}
+
+.float-input label {
+  position: absolute;
+  -webkit-transition: font-size 0.3s,opacity 0.3s, -webkit-transform 0.3s;
+  transition: font-size 0.3s,opacity 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, font-size 0.3s,opacity 0.3s;
+  transition: transform 0.3s, font-size 0.3s,opacity 0.3s, -webkit-transform 0.3s;
+}
+
+.float-input span.validation-text {
+  position: absolute;
+  top: -2em;
+  left: 0;
+  font-size: 14px;
+  color: #DB4646;
+  pointer-events: none;
+}
+
+.badge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 1em;
+  padding: 0.2em 0.7em;
+  font-size: 12px;
+  margin: 0 0.5em;
+}
+
+.badge.badge-warning {
+  background-color: #52FF00;
+  color: #000;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2em auto;
+  width: 100%;
+  max-width: 1280px;
+}
+
+main .breadcrumb {
+  margin-right: 2em;
+}
+
+main > div {
+  width: 95%;
+  margin: 0 auto;
+}
+
+main .user-sidebar {
+  background-color: #0B1E33;
+  border-radius: 1em;
+  padding: 1em;
+  color: #fff;
+}
+
+main .user-sidebar div.top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+main .user-sidebar div.top a.logout {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+main .user-sidebar div.top > div:first-of-type {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+main .user-sidebar div.top > div:first-of-type:hover a {
+  opacity: .8;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+main .user-sidebar div.top > div:first-of-type img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+main .user-sidebar div.top > div:first-of-type a {
+  position: absolute;
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: opacity 0.3s , -webkit-transform 0.3s;
+  transition: opacity 0.3s , -webkit-transform 0.3s;
+  transition: opacity 0.3s , transform 0.3s;
+  transition: opacity 0.3s , transform 0.3s , -webkit-transform 0.3s;
+}
+
+main .user-sidebar div.top > div:last-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .user-sidebar div.top > div:last-of-type a:hover svg {
+  opacity: 1;
+}
+
+main .user-sidebar div.top > div:last-of-type svg {
+  opacity: 0.5;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+main .user-sidebar ul.options {
+  list-style: none;
+}
+
+main .user-sidebar ul.options li {
+  width: 90%;
+  margin: 0.5em 0;
+  padding: 0.5em;
+  border-radius: .5em;
+}
+
+main .user-sidebar ul.options li:hover {
+  background-color: #0D2540;
+}
+
+main .user-sidebar ul.options li.active {
+  background-color: #081626;
+  position: relative;
+}
+
+main .user-sidebar ul.options li.active:after {
+  background-color: #6A62FE;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  content: "";
+  border-radius: 0.5em 0 0 0.5em;
+}
+
+main .user-sidebar ul.options li a {
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .user-sidebar ul.options li a svg {
+  margin: 0 1em;
+  opacity: 0.5;
+}
+
+main .panel-details {
+  background-color: #0B1E33;
+  border-radius: 1em;
+  padding: 1em;
+  color: #fff;
+  margin-right: auto;
+}
+
+main .panel-details > div .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .panel-details > div .title h4 {
+  height: 40px;
+}
+
+main .panel-details > div hr {
+  margin-bottom: 1em;
+}
+
+main .panel-details > div .user-information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .panel-details > div .user-information > div {
+  margin: 0 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 0.5em;
+}
+
+main .panel-details > div .user-information > div .key {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .panel-details > div .user-information > div .key svg {
+  margin-left: 0.5em;
+  opacity: 0.5;
+}
+
+main .panel-details > div .user-information > div .value {
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .panel-details > div .user-information > div .value strong {
+  font-size: 14px;
+}
+
+main .panel-details > div .user-information > div .value span {
+  margin-right: 0.5em;
+  color: #6A62FE;
+  display: none;
+}
+
+main .panel-details > div .user-information > div .value a.badge {
+  text-decoration: none;
+}
+
+main .panel-details > div .user-information > div .value p {
+  margin-top: 0.5em;
+  font-size: 14px;
+}
+
+main .panel-details > div .liked-courses ul {
+  list-style: none;
+  max-height: 250px;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+  overflow-y: auto;
+}
+
+main .panel-details > div .liked-courses ul::-webkit-scrollbar {
+  width: 10px;
+}
+
+main .panel-details > div .liked-courses ul::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5em;
+}
+
+main .panel-details > div .liked-courses ul::-webkit-scrollbar-thumb {
+  background: #31CF2E;
+  border-radius: 0.5em;
+  border: 3px #0B1E33 solid;
+}
+
+main .panel-details > div .liked-courses ul::-webkit-scrollbar-thumb:hover {
+  background: #6A62FE;
+}
+
+main .panel-details > div .liked-courses ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1em;
+}
+
+main .panel-details > div .courses-status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .panel-details > div .courses-status > div {
+  width: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 1em;
+  margin-bottom: 1em;
+}
+
+main .panel-details > div .courses-status > div a {
+  margin-bottom: 0.5em;
+}
+
+main .panel-details > div .courses-status > div progress {
+  direction: ltr;
+  border-radius: 1.5em;
+  width: 100%;
+  height: 30px;
+  color: #fff;
+  position: relative;
+  --progress-value-bg: blue;
+}
+
+main .panel-details > div .courses-status > div progress::after {
+  content: attr(value) " %";
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+main .panel-details > div .courses-status > div progress::-webkit-progress-bar {
+  background-color: #081626;
+  border-radius: 1.5em;
+  padding: 5px;
+}
+
+main .panel-details > div .courses-status > div progress::-webkit-progress-value {
+  background-color: var(--progress-value-bg);
+  border-radius: 1.5em;
+}
+
+main .panel-details > div .courses-status > div progress.low {
+  --progress-value-bg: #DB4646;
+}
+
+main .panel-details > div .courses-status > div progress.medium {
+  --progress-value-bg: #52FF00;
+}
+
+main .panel-details > div .courses-status > div progress.high {
+  --progress-value-bg: blue;
+}
+
+main .panel-details > div .courses-status > div progress.full {
+  --progress-value-bg: #0B1E33;
+}
+
+main .panel-details > div .courses-status > div div.progress {
+  width: 100%;
+  height: 20px;
+  background-color: #081626;
+  border-radius: 1.5em;
+  position: relative;
+}
+
+main .panel-details > div .courses-status > div div.progress::before {
+  content: "";
+  height: 100%;
+  position: absolute;
+  border-radius: 1.5em;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #52FF00;
+  width: attr(data-progress em);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: none;
+  place-items: center;
+}
+
+.modal .bg {
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.modal .mdal-main {
+  margin: auto;
+  width: 350px;
+  background-color: #0B1E33;
+  padding: 1.5em;
+  border-radius: 1em;
+  color: #fff;
+}
+
+.modal .mdal-main .modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal .mdal-main hr {
+  margin: 1em 0;
+}
+
+.modal .mdal-main .modal-body {
+  margin: 1em 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal .mdal-main .modal-body .phone-number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1em;
+}
+
+.modal .mdal-main .modal-body .phone-number strong {
+  margin-right: auto;
+}
+
+.modal .mdal-main .modal-body form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal .mdal-main .modal-body form > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal .mdal-main .modal-body form > div input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  margin: 1em 0;
+  padding: 1em;
+  outline: none;
+  border: none;
+  background-color: #081626;
+  font-family: 'vazir fd';
+  color: #fff;
+  border-radius: 1em;
+}
+
+.modal .mdal-main .modal-body form > div .validation {
+  color: #DB4646;
+  font-size: 14px;
+}
+
+.modal .mdal-main .modal-body form button {
+  margin-top: 1em;
+  font-family: 'vazir fd';
+}
+/*# sourceMappingURL=user.css.map */
