@@ -1,11 +1,26 @@
 @import 'root';
-
+@mixin inputStyle($backColor,$padding:1em,$margin:0,$borderRadius:0.5em) {
+    appearance: none;
+    padding: $padding;
+    margin: $margin;
+    outline: none;
+    border: none;
+    background-color: $backColor;
+    font-family: 'vazir fd';
+    color: #fff;
+    border-radius: $borderRadius;
+}
 main{
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 2em auto;
     width: 100% ;
     max-width: 1280px;
+    @media screen and (max-width:768px) {
+        width: 95% ;
+        
+    }
 
     .breadcrumb{
         margin-right: 2em;
@@ -20,6 +35,11 @@ main{
         border-radius: 1em;
         padding: 1em;
         color: #fff;
+        margin: 0 auto;
+        margin-bottom: 1em;
+        @media screen and(max-width:600px){
+            font-size: 14px;
+        }
         div.top{
             display: flex;
             flex-direction: column;
@@ -113,18 +133,24 @@ main{
         padding: 1em;
         color: #fff;
         margin-right: auto;
+        height: fit-content;
         & > div{
-            .title{
+            &.title , .title{
+                @media screen and(max-width:600px){
+                    margin-top: 1em;
+                }
                 display: flex;
                 align-items: center;
                 h4{
                     height: 40px;
                 }
+                @media screen and(max-width:600px){
+                    font-size: 14px;
+                }
             }
             hr{
                 margin-bottom: 1em;
             }
-
             .user-information{
                 display: flex;
                 flex-direction: column;
@@ -132,7 +158,10 @@ main{
                     margin: 0 1em;
                     display: flex;
                     flex-wrap: wrap;
-                    margin-bottom: 0.5em;
+                    margin-bottom: 1em;
+                    @media screen and(max-width:600px){
+                        font-size: 14px;
+                    }
                     .key{
                         display: flex;
                         align-items: center;
@@ -145,28 +174,33 @@ main{
                         margin-right: auto;
                         display: flex;
                         align-items: center;
+                        flex-wrap: wrap;
                         strong{
                             font-size: 14px;
                         }
                         span{
                             margin-right: 0.5em;
                             color: $primaryColor;
-                            display: none;
+                            //display: none;
                         }
                         
                         a.badge{
                             text-decoration: none;
-                            //display: none;
+                            display: none;
                         }
 
                         p{
                             margin-top: 0.5em;
                             font-size: 14px;
+                            @media screen and(max-width:600px){
+                                font-size: 12px;
+                            }
                         }
                     }
                 }
             }
             .liked-courses{
+                
                 ul{
                     list-style: none;
                     max-height: 250px;
@@ -183,6 +217,9 @@ main{
                 flex-wrap: wrap;
                 & > div{
                     width: 45%;
+                    @media screen and (max-width:600px) {
+                        width: 100%;
+                    }
                     display: flex;
                     flex-direction: column;
                     margin: 0 1em;
@@ -244,8 +281,42 @@ main{
                 }
             }
         }
+        .body{
+            form{
+                div{
+                    display: flex;
+                    flex-direction: column;
+                    padding: 1em;
+                    label{
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 0.5em;
+                        svg{
+                            margin-left: 0.5em;
+                            opacity: 0.5;
+                        }
+                    }
+                    input:not(input[type=checkbox]),textarea{
+                        @include inputStyle($backgroundColor);
+                        resize: vertical;
+                    }
+                    &:last-of-type{
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+                button{
+                    width: fit-content;
+                    margin-right: auto;
+                    margin-left: 2em;
+                    padding: 1em 2em;
+                }
+            }
+        }
     }
 }
+
 
 .modal{
     
@@ -294,15 +365,7 @@ main{
                     display: flex;
                     flex-direction: column;
                     input{
-                        appearance: none;
-                        margin: 1em 0;
-                        padding: 1em;
-                        outline: none;
-                        border: none;
-                        background-color: $backgroundColor;
-                        font-family: 'vazir fd';
-                        color: #fff;
-                        border-radius: 1em;
+                        @include inputStyle($backgroundColor,1em,1em 0, 1em);
                     }
                     .validation{
                         color: $dangerColor;

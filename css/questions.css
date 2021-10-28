@@ -15,6 +15,8 @@
   position: relative;
   text-align: center;
   cursor: pointer;
+  font-family: 'vazir fd';
+  font-weight: bold;
 }
 
 .btn.btn-sm {
@@ -77,6 +79,16 @@
 }
 
 .btn.btn-cta:hover {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn.btn-warning {
+  background-color: #52FF00;
+  color: #000 !important;
+}
+
+.btn.btn-warning:hover {
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }

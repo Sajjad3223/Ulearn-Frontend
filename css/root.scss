@@ -51,6 +51,8 @@ $warningColor:#52FF00;
     position: relative;
     text-align: center;
     cursor: pointer;
+    font-family: 'vazir fd';
+    font-weight: bold;
     &.btn-sm{
         font-size: 12px;
         padding: 0.3em;
@@ -94,6 +96,13 @@ $warningColor:#52FF00;
     }
     &.btn-cta{
         background-color: $ctaColor;
+        &:hover{
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+    }
+    &.btn-warning{
+        background-color: $warningColor;
+        color: #000 !important;
         &:hover{
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
         }

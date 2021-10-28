@@ -15,6 +15,8 @@
   position: relative;
   text-align: center;
   cursor: pointer;
+  font-family: 'vazir fd';
+  font-weight: bold;
 }
 
 .btn.btn-sm {
@@ -77,6 +79,16 @@
 }
 
 .btn.btn-cta:hover {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn.btn-warning {
+  background-color: #52FF00;
+  color: #000 !important;
+}
+
+.btn.btn-warning:hover {
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
@@ -346,9 +358,18 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 2em auto;
   width: 100%;
   max-width: 1280px;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 95%;
+  }
 }
 
 main .breadcrumb {
@@ -365,6 +386,14 @@ main .user-sidebar {
   border-radius: 1em;
   padding: 1em;
   color: #fff;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+
+@media screen and (max-width: 600px) {
+  main .user-sidebar {
+    font-size: 14px;
+  }
 }
 
 main .user-sidebar div.top {
@@ -490,9 +519,12 @@ main .panel-details {
   padding: 1em;
   color: #fff;
   margin-right: auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
-main .panel-details > div .title {
+main .panel-details > div.title, main .panel-details > div .title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -501,8 +533,20 @@ main .panel-details > div .title {
           align-items: center;
 }
 
-main .panel-details > div .title h4 {
+@media screen and (max-width: 600px) {
+  main .panel-details > div.title, main .panel-details > div .title {
+    margin-top: 1em;
+  }
+}
+
+main .panel-details > div.title h4, main .panel-details > div .title h4 {
   height: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  main .panel-details > div.title, main .panel-details > div .title {
+    font-size: 14px;
+  }
 }
 
 main .panel-details > div hr {
@@ -526,7 +570,13 @@ main .panel-details > div .user-information > div {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
+}
+
+@media screen and (max-width: 600px) {
+  main .panel-details > div .user-information > div {
+    font-size: 14px;
+  }
 }
 
 main .panel-details > div .user-information > div .key {
@@ -551,6 +601,8 @@ main .panel-details > div .user-information > div .value {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 main .panel-details > div .user-information > div .value strong {
@@ -560,16 +612,22 @@ main .panel-details > div .user-information > div .value strong {
 main .panel-details > div .user-information > div .value span {
   margin-right: 0.5em;
   color: #6A62FE;
-  display: none;
 }
 
 main .panel-details > div .user-information > div .value a.badge {
   text-decoration: none;
+  display: none;
 }
 
 main .panel-details > div .user-information > div .value p {
   margin-top: 0.5em;
   font-size: 14px;
+}
+
+@media screen and (max-width: 600px) {
+  main .panel-details > div .user-information > div .value p {
+    font-size: 12px;
+  }
 }
 
 main .panel-details > div .liked-courses ul {
@@ -627,6 +685,12 @@ main .panel-details > div .courses-status > div {
           flex-direction: column;
   margin: 0 1em;
   margin-bottom: 1em;
+}
+
+@media screen and (max-width: 600px) {
+  main .panel-details > div .courses-status > div {
+    width: 100%;
+  }
 }
 
 main .panel-details > div .courses-status > div a {
@@ -698,6 +762,69 @@ main .panel-details > div .courses-status > div div.progress::before {
   left: 0;
   background-color: #52FF00;
   width: attr(data-progress em);
+}
+
+main .panel-details .body form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1em;
+}
+
+main .panel-details .body form div label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 0.5em;
+}
+
+main .panel-details .body form div label svg {
+  margin-left: 0.5em;
+  opacity: 0.5;
+}
+
+main .panel-details .body form div input:not(input[type=checkbox]), main .panel-details .body form div textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 1em;
+  margin: 0;
+  outline: none;
+  border: none;
+  background-color: #081626;
+  font-family: 'vazir fd';
+  color: #fff;
+  border-radius: 0.5em;
+  resize: vertical;
+}
+
+main .panel-details .body form div:last-of-type {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .panel-details .body form button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: auto;
+  margin-left: 2em;
+  padding: 1em 2em;
 }
 
 .modal {
@@ -787,8 +914,8 @@ main .panel-details > div .courses-status > div div.progress::before {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  margin: 1em 0;
   padding: 1em;
+  margin: 1em 0;
   outline: none;
   border: none;
   background-color: #081626;
