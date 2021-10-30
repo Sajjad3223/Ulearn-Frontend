@@ -338,10 +338,13 @@ main{
                     li{
                         padding: 0.5em 2em;
                         width: fit-content;
-                        max-width: 50%;
+                        max-width: 70%;
                         font-size: 14px;
                         display: flex;
                         flex-direction: column;
+                        @media screen and(max-width:600px){
+                            font-size: 12px;
+                        }
                         span{
                             font-size: 12px;
                             margin-top: 0.3em;
@@ -367,6 +370,9 @@ main{
                 }
                 div.chat-options{
                     width: 100%;
+                    @media screen and(max-width:600px){
+                        width: fit-content;
+                    }
                     display: flex;
                     align-items: flex-start;
                     flex-wrap: wrap;
@@ -376,6 +382,12 @@ main{
                         resize: none;
                         @include scrollbar();
                         height: 100px;
+                        @media screen and(max-width:600px){
+                            flex-grow: 1;
+                            width: 100%;
+                            font-size: 12px;
+                        }
+                        
                     }
                     .btn-outlined-icon{
                         display: grid;
@@ -385,12 +397,19 @@ main{
                         border: 2px solid #fff;
                         border-radius: 0.5em;
                         margin: 0 0.5em;
+                        @media screen and(max-width:600px){
+                            margin: 0.5em 1em;
+                        }
                         transition: background-color 0.3s;
                         &:hover{
                             background-color: $primaryColor;
                         }
                     }
                     button{
+                        @media screen and(max-width:600px){
+                            width: 100%;
+                            margin: 0;
+                        }
                         padding: 0 5em;
                         height: 58px;
                     }
@@ -482,7 +501,8 @@ main{
     place-items: center;
     .mdal-main{
         margin: auto;
-        width: 350px;
+        width: 50vw;
+        min-width: 250px;
         background-color: $cardBackground;
         padding: 1.5em;
         border-radius: 1em;
@@ -498,7 +518,7 @@ main{
             margin: 1em 0.5em;
             display: flex;
             flex-direction: column;
-            .phone-number{
+            .flex-row{
                 display: flex;
                 align-items: center;
                 margin-bottom: 1em;
@@ -512,12 +532,22 @@ main{
                 &> div{
                     display: flex;
                     flex-direction: column;
+                    @media screen and(max-width:600px){
+                        font-size: 12px;
+                    }
                     input{
                         @include inputStyle($backgroundColor,1em,1em 0, 1em);
+                        @media screen and(max-width:600px){
+                            @include inputStyle($backgroundColor,1em ,0 ,0.5em )
+                        }
                     }
                     .validation{
                         color: $dangerColor;
                         font-size: 14px;
+                        @media screen and(max-width:600px){
+                            font-size: 10px;
+                            margin-right: auto;
+                        }
                     }
                 }
                 button{

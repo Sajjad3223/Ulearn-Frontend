@@ -68,6 +68,39 @@
             </ol>
         </div>
 
+        <div class="modal">
+            <div class="bg"></div>
+            <div class="mdal-main">
+                <div class="modal-header">
+                    <h4>ایجاد لینک</h4>
+                    <a href="" id="close-modal" class="left btn-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 12C1 14.4477 1.13246 16.3463 1.46153 17.827C1.78807 19.2963 2.29478 20.2921 3.00136 20.9986C3.70794 21.7052 4.70365 22.2119 6.17298 22.5385C7.65366 22.8675 9.55232 23 12 23C14.4477 23 16.3463 22.8675 17.827 22.5385C19.2963 22.2119 20.2921 21.7052 20.9986 20.9986C21.7052 20.2921 22.2119 19.2963 22.5385 17.827C22.8675 16.3463 23 14.4477 23 12C23 9.55232 22.8675 7.65366 22.5385 6.17298C22.2119 4.70365 21.7052 3.70794 20.9986 3.00136C20.2921 2.29478 19.2963 1.78807 17.827 1.46153C16.3463 1.13246 14.4477 1 12 1C9.55232 1 7.65366 1.13246 6.17298 1.46153C4.70365 1.78807 3.70794 2.29478 3.00136 3.00136C2.29478 3.70794 1.78807 4.70365 1.46153 6.17298C1.13246 7.65366 1 9.55232 1 12Z" stroke="#FF5555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15 9L12 12M12 12L9 15M12 12L15 15M12 12L9 9" stroke="#FF5555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+                <hr>
+                <div class="modal-body">
+                    <form action="">
+                        <div>
+                            <label for="">متن نمایشی:</label>
+                            <input type="text">
+                            <span class="validation">متن وارد شده معتبر نمیباشد</span>
+                        </div>
+                        <div>
+                            <label >لینک مورد نظر:</label>
+                            <input type="url" >
+                            <span class="validation">لینک وارد شده معتبر نمیباشد</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            ساخت لینک
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <div>
             <div class="row">
                 <aside class="col-md-3 col-sm-12 user-sidebar">
@@ -221,7 +254,7 @@
                                             <path d="M15.1284 2.53095C15.1284 2.53095 15.9303 5.334 14.1186 12.0955C11.6598 21.2718 9.08088 23.169 5.21719 22.1337C1.3535 21.0984 0.0686655 18.1659 2.52745 8.98965C4.98623 -0.186647 10.1095 0.908913 11.3595 3.07398C12.7737 5.52347 10.479 12.1555 10.479 12.1555C10.479 12.1555 8.9755 17.4467 6.64069 16.8211C3.25994 15.9152 7.0382 7.61011 7.0382 7.61011" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>                                            
                                     </a>
-                                    <a href="" class="btn-outlined-icon link">
+                                    <a href="#" onclick="showmodal(event)" class="btn-outlined-icon link">
                                         <svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0.992195C9 0.428951 8.53256 -0.0246016 7.9699 0.00103596C2.07952 0.269431 0 1.4517 0 6C0 10.5483 2.07952 11.7306 7.9699 11.999C8.53256 12.0246 9 11.571 9 11.0078C9 10.4663 8.56897 10.0246 8.02803 9.99955C7.48396 9.97438 6.97948 9.94121 6.51129 9.89815C5.04605 9.7634 4.08107 9.54253 3.43832 9.25642C2.85776 8.998 2.57538 8.705 2.39012 8.34265C2.17191 7.91586 2 7.21286 2 6C2 4.78714 2.17191 4.08413 2.39012 3.65734C2.57538 3.29499 2.85776 3.002 3.43832 2.74357C4.08107 2.45746 5.04605 2.2366 6.51129 2.10184C6.97948 2.05878 7.48396 2.02562 8.02803 2.00044C8.56897 1.97541 9 1.53371 9 0.992195ZM15 11.0078C15 10.4663 15.431 10.0246 15.972 9.99955C16.516 9.97438 17.0205 9.94121 17.4887 9.89815C18.954 9.7634 19.9189 9.54253 20.5617 9.25642C21.1422 8.998 21.4246 8.705 21.6099 8.34265C21.8281 7.91586 22 7.21286 22 6C22 4.78714 21.8281 4.08413 21.6099 3.65734C21.4246 3.29499 21.1422 3.002 20.5617 2.74357C19.9189 2.45746 18.954 2.2366 17.4887 2.10184C17.0205 2.05878 16.516 2.02562 15.972 2.00044C15.431 1.97541 15 1.53371 15 0.992195C15 0.428951 15.4674 -0.0246016 16.0301 0.00103593C21.9205 0.26943 24 1.4517 24 6C24 10.5483 21.9205 11.7306 16.0301 11.999C15.4674 12.0246 15 11.571 15 11.0078Z" fill="white"/>
                                             <path d="M7 6H17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -307,5 +340,21 @@
     </main>
         
     <script src="js/jquery.js"></script>
+    <script>
+        function showmodal(event) {
+            event.preventDefault();
+            let modal = $('.modal')[0];
+            modal.style.display = "grid";
+        }
+        $('#close-modal').click(event => {
+            event.preventDefault();
+            let modal = $('.modal')[0];
+            modal.style.display = "none";
+        })
+        $('.modal .bg').click(event => {
+            let modal = $(event.currentTarget).parent()[0];
+            modal.style.display = "none";
+        })
+</script>
 </body>
 </html>

@@ -940,7 +940,7 @@ main .panel-details form.ticket div.chat-container ul.chats li {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  max-width: 50%;
+  max-width: 70%;
   font-size: 14px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -949,6 +949,12 @@ main .panel-details form.ticket div.chat-container ul.chats li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+  main .panel-details form.ticket div.chat-container ul.chats li {
+    font-size: 12px;
+  }
 }
 
 main .panel-details form.ticket div.chat-container ul.chats li span {
@@ -991,6 +997,14 @@ main .panel-details form.ticket div.chat-container div.chat-options {
       flex-wrap: wrap;
 }
 
+@media screen and (max-width: 600px) {
+  main .panel-details form.ticket div.chat-container div.chat-options {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+
 main .panel-details form.ticket div.chat-container div.chat-options textarea {
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
@@ -1024,6 +1038,16 @@ main .panel-details form.ticket div.chat-container div.chat-options textarea::-w
   background: #6A62FE;
 }
 
+@media screen and (max-width: 600px) {
+  main .panel-details form.ticket div.chat-container div.chat-options textarea {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    width: 100%;
+    font-size: 12px;
+  }
+}
+
 main .panel-details form.ticket div.chat-container div.chat-options .btn-outlined-icon {
   display: -ms-grid;
   display: grid;
@@ -1037,6 +1061,12 @@ main .panel-details form.ticket div.chat-container div.chat-options .btn-outline
   transition: background-color 0.3s;
 }
 
+@media screen and (max-width: 600px) {
+  main .panel-details form.ticket div.chat-container div.chat-options .btn-outlined-icon {
+    margin: 0.5em 1em;
+  }
+}
+
 main .panel-details form.ticket div.chat-container div.chat-options .btn-outlined-icon:hover {
   background-color: #6A62FE;
 }
@@ -1044,6 +1074,13 @@ main .panel-details form.ticket div.chat-container div.chat-options .btn-outline
 main .panel-details form.ticket div.chat-container div.chat-options button {
   padding: 0 5em;
   height: 58px;
+}
+
+@media screen and (max-width: 600px) {
+  main .panel-details form.ticket div.chat-container div.chat-options button {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 main .panel-details .table {
@@ -1170,7 +1207,8 @@ main .panel-details .table table tbody tr:after {
 
 .modal .mdal-main {
   margin: auto;
-  width: 350px;
+  width: 50vw;
+  min-width: 250px;
   background-color: #0B1E33;
   padding: 1.5em;
   border-radius: 1em;
@@ -1201,7 +1239,7 @@ main .panel-details .table table tbody tr:after {
           flex-direction: column;
 }
 
-.modal .mdal-main .modal-body .phone-number {
+.modal .mdal-main .modal-body .flex-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1211,7 +1249,7 @@ main .panel-details .table table tbody tr:after {
   margin-bottom: 1em;
 }
 
-.modal .mdal-main .modal-body .phone-number strong {
+.modal .mdal-main .modal-body .flex-row strong {
   margin-right: auto;
 }
 
@@ -1235,6 +1273,12 @@ main .panel-details .table table tbody tr:after {
           flex-direction: column;
 }
 
+@media screen and (max-width: 600px) {
+  .modal .mdal-main .modal-body form > div {
+    font-size: 12px;
+  }
+}
+
 .modal .mdal-main .modal-body form > div input {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -1249,9 +1293,32 @@ main .panel-details .table table tbody tr:after {
   border-radius: 1em;
 }
 
+@media screen and (max-width: 600px) {
+  .modal .mdal-main .modal-body form > div input {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    padding: 1em;
+    margin: 0;
+    outline: none;
+    border: none;
+    background-color: #081626;
+    font-family: 'vazir fd';
+    color: #fff;
+    border-radius: 0.5em;
+  }
+}
+
 .modal .mdal-main .modal-body form > div .validation {
   color: #DB4646;
   font-size: 14px;
+}
+
+@media screen and (max-width: 600px) {
+  .modal .mdal-main .modal-body form > div .validation {
+    font-size: 10px;
+    margin-right: auto;
+  }
 }
 
 .modal .mdal-main .modal-body form button {
