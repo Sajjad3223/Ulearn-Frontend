@@ -340,6 +340,7 @@ input[type=radio].radio:checked:before {
   transition: font-size 0.3s,opacity 0.3s, -webkit-transform 0.3s;
   transition: transform 0.3s, font-size 0.3s,opacity 0.3s;
   transition: transform 0.3s, font-size 0.3s,opacity 0.3s, -webkit-transform 0.3s;
+  pointer-events: none;
 }
 
 .float-input span.validation-text {

@@ -307,6 +307,7 @@ input[type=radio].radio{
     label{
         position: absolute;
         transition: transform 0.3s, font-size 0.3s,opacity 0.3s;
+        pointer-events: none;
     }
     span.validation-text{
         position: absolute;
