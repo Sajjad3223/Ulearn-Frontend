@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .btn {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -93,6 +94,15 @@
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
+.btn.btn-outline-warning {
+  border: 2px solid #52FF00;
+  border-radius: 0.5em;
+}
+
+.btn.btn-outline-warning:hover {
+  background-color: #52FF00;
+}
+
 .btn.btn-danger {
   background-color: #DB4646;
 }
@@ -100,6 +110,15 @@
 .btn.btn-danger:hover {
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn.btn-outline-danger {
+  border: 2px solid #DB4646;
+  border-radius: 0.5em;
+}
+
+.btn.btn-outline-danger:hover {
+  background-color: #DB4646;
 }
 
 .btn-icon {
@@ -642,6 +661,7 @@ main .panel-details > div .liked-courses ul {
 
 main .panel-details > div .liked-courses ul::-webkit-scrollbar {
   width: 10px;
+  margin: 0.5em;
 }
 
 main .panel-details > div .liked-courses ul::-webkit-scrollbar-track {
@@ -697,71 +717,8 @@ main .panel-details > div .courses-status > div a {
   margin-bottom: 0.5em;
 }
 
-main .panel-details > div .courses-status > div progress {
-  direction: ltr;
-  border-radius: 1.5em;
-  width: 100%;
-  height: 30px;
-  color: #fff;
-  position: relative;
-  --progress-value-bg: blue;
-}
-
-main .panel-details > div .courses-status > div progress::after {
-  content: attr(value) " %";
-  position: absolute;
-  color: #fff;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-main .panel-details > div .courses-status > div progress::-webkit-progress-bar {
-  background-color: #081626;
-  border-radius: 1.5em;
-  padding: 5px;
-}
-
-main .panel-details > div .courses-status > div progress::-webkit-progress-value {
-  background-color: var(--progress-value-bg);
-  border-radius: 1.5em;
-}
-
-main .panel-details > div .courses-status > div progress.low {
-  --progress-value-bg: #DB4646;
-}
-
-main .panel-details > div .courses-status > div progress.medium {
-  --progress-value-bg: #52FF00;
-}
-
-main .panel-details > div .courses-status > div progress.high {
-  --progress-value-bg: blue;
-}
-
-main .panel-details > div .courses-status > div progress.full {
-  --progress-value-bg: #0B1E33;
-}
-
-main .panel-details > div .courses-status > div div.progress {
-  width: 100%;
-  height: 20px;
-  background-color: #081626;
-  border-radius: 1.5em;
-  position: relative;
-}
-
-main .panel-details > div .courses-status > div div.progress::before {
-  content: "";
-  height: 100%;
-  position: absolute;
-  border-radius: 1.5em;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #52FF00;
-  width: attr(data-progress em);
+main .panel-details .body {
+  margin-top: 1.5em;
 }
 
 main .panel-details .body form div {
@@ -825,6 +782,185 @@ main .panel-details .body form button {
   margin-right: auto;
   margin-left: 2em;
   padding: 1em 2em;
+}
+
+main .panel-details .factor-details {
+  margin: 1em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+}
+
+main .panel-details .factor-details > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .panel-details .factor-details > div span {
+  width: 40%;
+}
+
+main .panel-details .factor-details > div strong {
+  margin: 0 auto;
+}
+
+main .panel-details .factor-details > div strong sub {
+  margin-right: 0.5em;
+}
+
+@media screen and (max-width: 400px) {
+  main .panel-details .factor-details {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  main .panel-details .factor-details span {
+    width: 60% !important;
+  }
+}
+
+main .panel-details form.charge {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .panel-details form.charge input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 1em;
+  margin: 0;
+  outline: none;
+  border: none;
+  background-color: #081626;
+  font-family: 'vazir fd';
+  color: #fff;
+  border-radius: 0.5em;
+  margin: 1em;
+  min-width: 300px;
+}
+
+main .panel-details form.charge button {
+  margin: 1em;
+}
+
+main .panel-details .table {
+  overflow: auto;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+  border: 3px solid #6A62FE;
+  border-radius: 1em;
+  padding: 1em 1.5em;
+  margin-top: 1em;
+  max-height: 400px;
+}
+
+main .panel-details .table::-webkit-scrollbar {
+  width: 10px;
+  margin: 0.5em;
+}
+
+main .panel-details .table::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5em;
+}
+
+main .panel-details .table::-webkit-scrollbar-thumb {
+  background: #31CF2E;
+  border-radius: 0.5em;
+  border: 3px #0B1E33 solid;
+}
+
+main .panel-details .table::-webkit-scrollbar-thumb:hover {
+  background: #6A62FE;
+}
+
+main .panel-details .table table {
+  min-width: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+main .panel-details .table table td {
+  padding: 0 1em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+main .panel-details .table table thead {
+  height: 40px;
+  font-weight: bolder;
+  position: relative;
+  text-align: center;
+  display: table-header-group;
+}
+
+@media screen and (max-width: 400px) {
+  main .panel-details .table table thead {
+    font-size: 14px;
+  }
+}
+
+main .panel-details .table table thead:after {
+  content: "";
+  height: 2px;
+  background-color: #fff;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+main .panel-details .table table tbody {
+  text-align: center;
+}
+
+main .panel-details .table table tbody tr {
+  height: 50px;
+  font-size: 14px;
+  position: relative;
+}
+
+@media screen and (max-width: 400px) {
+  main .panel-details .table table tbody tr {
+    font-size: 12px;
+  }
+}
+
+main .panel-details .table table tbody tr:last-child:after {
+  display: none;
+}
+
+main .panel-details .table table tbody tr:after {
+  content: "";
+  height: 0.5px;
+  background-color: #fff;
+  opacity: 0.3;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.text-wrap {
+  word-wrap: break-word;
 }
 
 .modal {
@@ -932,5 +1068,57 @@ main .panel-details .body form button {
 .modal .mdal-main .modal-body form button {
   margin-top: 1em;
   font-family: 'vazir fd';
+}
+
+progress {
+  direction: ltr;
+  border-radius: 1.5em;
+  min-width: 150px;
+  width: 100%;
+  height: 30px;
+  color: #fff;
+  position: relative;
+  --progress-value-bg: blue;
+}
+
+progress::after {
+  content: attr(value) " %";
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+progress::-webkit-progress-bar {
+  background-color: #081626;
+  border-radius: 1.5em;
+  padding: 5px;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--progress-value-bg);
+  border-radius: 1.5em;
+}
+
+progress.low {
+  --progress-value-bg: #DB4646;
+}
+
+progress.medium {
+  --progress-value-bg: #52FF00;
+}
+
+progress.high {
+  --progress-value-bg: blue;
+}
+
+progress.full {
+  --progress-value-bg: #0B1E33;
+}
+
+progress.full::after {
+  content: "کامل دیده اید!";
 }
 /*# sourceMappingURL=user.css.map */

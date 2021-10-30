@@ -2,6 +2,7 @@
     /* width */
     &::-webkit-scrollbar {
         width: 10px;
+        margin: 0.5em;
     }
     
     /* Track */
@@ -107,10 +108,24 @@ $warningColor:#52FF00;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
         }
     }
+    &.btn-outline-warning{
+        border: 2px solid $warningColor;
+        border-radius: 0.5em;
+        &:hover{
+            background-color: $warningColor ;
+        }
+    }
     &.btn-danger{
         background-color: $dangerColor;
         &:hover{
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+    }
+    &.btn-outline-danger{
+        border: 2px solid $dangerColor;
+        border-radius: 0.5em;
+        &:hover{
+            background-color: $dangerColor ;
         }
     }
 }
