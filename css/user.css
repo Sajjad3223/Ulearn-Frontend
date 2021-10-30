@@ -857,6 +857,195 @@ main .panel-details form.charge button {
   margin: 1em;
 }
 
+main .panel-details form.ticket {
+  margin: 0 1em;
+}
+
+main .panel-details form.ticket div.topic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0;
+}
+
+main .panel-details form.ticket div.topic label {
+  padding: 0;
+  margin: 0;
+  margin-left: 1em;
+}
+
+main .panel-details form.ticket div.topic input {
+  width: 65%;
+}
+
+main .panel-details form.ticket div.chat-container {
+  margin-top: 1em;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 3px solid #6A62FE;
+  padding: 1em;
+  border-radius: 1em;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+main .panel-details form.ticket div.chat-container ul.chats {
+  height: 300px;
+  overflow-y: auto;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+  list-style: none;
+}
+
+main .panel-details form.ticket div.chat-container ul.chats::-webkit-scrollbar {
+  width: 10px;
+  margin: 0.5em;
+}
+
+main .panel-details form.ticket div.chat-container ul.chats::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5em;
+}
+
+main .panel-details form.ticket div.chat-container ul.chats::-webkit-scrollbar-thumb {
+  background: #31CF2E;
+  border-radius: 0.5em;
+  border: 3px #0B1E33 solid;
+}
+
+main .panel-details form.ticket div.chat-container ul.chats::-webkit-scrollbar-thumb:hover {
+  background: #6A62FE;
+}
+
+main .panel-details form.ticket div.chat-container ul.chats li {
+  padding: 0.5em 2em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 50%;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .panel-details form.ticket div.chat-container ul.chats li span {
+  font-size: 12px;
+  margin-top: 0.3em;
+  opacity: 0.5;
+}
+
+main .panel-details form.ticket div.chat-container ul.chats li span span {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+main .panel-details form.ticket div.chat-container ul.chats li.me {
+  background-color: #1E344D;
+  border-radius: 0.5em 0.5em 0 0.5em;
+}
+
+main .panel-details form.ticket div.chat-container ul.chats li.him {
+  background-color: #0C151F;
+  border-radius: 0.5em 0.5em 0.5em 0;
+  margin: 1em;
+  margin-right: auto;
+}
+
+main .panel-details form.ticket div.chat-container ul.chats li.him span {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+main .panel-details form.ticket div.chat-container div.chat-options {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .panel-details form.ticket div.chat-container div.chat-options textarea {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  padding: 1em;
+  resize: none;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+  height: 100px;
+}
+
+main .panel-details form.ticket div.chat-container div.chat-options textarea::-webkit-scrollbar {
+  width: 10px;
+  margin: 0.5em;
+}
+
+main .panel-details form.ticket div.chat-container div.chat-options textarea::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5em;
+}
+
+main .panel-details form.ticket div.chat-container div.chat-options textarea::-webkit-scrollbar-thumb {
+  background: #31CF2E;
+  border-radius: 0.5em;
+  border: 3px #0B1E33 solid;
+}
+
+main .panel-details form.ticket div.chat-container div.chat-options textarea::-webkit-scrollbar-thumb:hover {
+  background: #6A62FE;
+}
+
+main .panel-details form.ticket div.chat-container div.chat-options .btn-outlined-icon {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #fff;
+  border-radius: 0.5em;
+  margin: 0 0.5em;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+main .panel-details form.ticket div.chat-container div.chat-options .btn-outlined-icon:hover {
+  background-color: #6A62FE;
+}
+
+main .panel-details form.ticket div.chat-container div.chat-options button {
+  padding: 0 5em;
+  height: 58px;
+}
+
 main .panel-details .table {
   overflow: auto;
   /* width */

@@ -304,6 +304,99 @@ main{
                 margin: 1em;
             }
         }
+        form.ticket{
+            margin: 0 1em;
+            div.topic{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                flex-wrap: wrap;
+                padding: 0;
+                label{
+                    padding: 0;
+                    margin: 0;
+                    margin-left: 1em;
+                }
+                input{
+                    width: 65%;
+                }
+            }
+            div.chat-container{
+                margin-top: 1em;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                border: 3px solid $primaryColor;
+                padding: 1em;
+                border-radius: 1em;
+                align-items: stretch;
+                ul.chats{
+                    height: 300px;
+                    overflow-y: auto;
+                    @include scrollbar();
+                    list-style: none;
+                    li{
+                        padding: 0.5em 2em;
+                        width: fit-content;
+                        max-width: 50%;
+                        font-size: 14px;
+                        display: flex;
+                        flex-direction: column;
+                        span{
+                            font-size: 12px;
+                            margin-top: 0.3em;
+                            opacity: 0.5;
+                            span{
+                                align-self: flex-start;
+                            }
+                        }
+                        &.me{
+                            background-color: #1E344D;
+                            border-radius: 0.5em 0.5em 0 0.5em;
+                        }
+                        &.him{
+                            background-color: #0C151F;
+                            border-radius: 0.5em 0.5em 0.5em 0;
+                            margin: 1em;
+                            margin-right: auto;
+                            span{
+                                align-self: flex-start;
+                            }
+                        }
+                    }
+                }
+                div.chat-options{
+                    width: 100%;
+                    display: flex;
+                    align-items: flex-start;
+                    flex-wrap: wrap;
+                    textarea{
+                        flex-grow: 2;
+                        padding: 1em;
+                        resize: none;
+                        @include scrollbar();
+                        height: 100px;
+                    }
+                    .btn-outlined-icon{
+                        display: grid;
+                        place-items: center;
+                        width: 50px;
+                        height: 50px;
+                        border: 2px solid #fff;
+                        border-radius: 0.5em;
+                        margin: 0 0.5em;
+                        transition: background-color 0.3s;
+                        &:hover{
+                            background-color: $primaryColor;
+                        }
+                    }
+                    button{
+                        padding: 0 5em;
+                        height: 58px;
+                    }
+                }
+            }
+        }
         .table{
             overflow: auto;
             @include scrollbar();
