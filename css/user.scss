@@ -1,15 +1,5 @@
 @import 'root';
-@mixin inputStyle($backColor,$padding:1em,$margin:0,$borderRadius:0.5em) {
-    appearance: none;
-    padding: $padding;
-    margin: $margin;
-    outline: none;
-    border: none;
-    background-color: $backColor;
-    font-family: 'vazir fd';
-    color: #fff;
-    border-radius: $borderRadius;
-}
+
 main{
     display: flex;
     flex-direction: column;
@@ -31,15 +21,18 @@ main{
     }
 
     .user-sidebar{
-        background-color: $cardBackground;
-        border-radius: 1em;
-        padding: 1em;
-        color: #fff;
-        margin: 0 auto;
-        margin-bottom: 1em;
-        @media screen and(max-width:600px){
-            font-size: 14px;
-        }
+        margin: 0;padding: 0;
+        .nav{
+            height: fit-content;
+            background-color: $cardBackground;
+            border-radius: 1em;
+            padding: 1em;
+            color: #fff;
+            margin: 0 auto;
+            margin-bottom: 1em;
+            @media screen and(max-width:600px){
+                font-size: 14px;
+            }
         div.top{
             display: flex;
             flex-direction: column;
@@ -88,6 +81,9 @@ main{
                 }
             }
         }
+        hr{
+            margin: 1em 0;
+        }
         ul.options{
             list-style: none;
             li{
@@ -101,6 +97,9 @@ main{
                 &.active{
                     background-color: $backgroundColor;
                     position: relative;
+                    svg{
+                        opacity: 1;
+                    }
                     &:after{
                         background-color: $primaryColor;
                         position: absolute;
@@ -120,10 +119,11 @@ main{
                     align-items: center;
                     svg{
                         margin: 0 1em;
-                        opacity: 0.5;
+                        opacity: 0.3;
                     }
                 }
             }
+        }
         }
     }
 
@@ -261,6 +261,35 @@ main{
                     margin-right: auto;
                     margin-left: 2em;
                     padding: 1em 2em;
+                }
+            }
+            .filter{
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                border: none;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                & > div{
+                    flex-grow: 1;
+                    display: flex;
+                    flex-direction: column;
+                    input[type=text]{
+                        @include inputStyle($backgroundColor, 0 0.5em,0,1em);
+                        height: 60px;
+                    }
+                    .toggle{
+                        background-color: $backgroundColor;
+                        label{
+                            font-size: 12px;
+                        }
+                        input:checked{
+                            & ~ label{
+                                background-color: $cardBackground;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -416,14 +445,178 @@ main{
                 }
             }
         }
+        form.discount{
+            width: 90%;
+            margin: 0 auto;
+            & > div{
+                display: flex;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                input{
+                    width: 100%;
+                }
+            }
+        }
+        form.new-episode{
+            .fileupload{
+                position: relative;
+                padding: 0;
+                margin: 0.5em 0;
+                input[type=file]{
+                    width: 100%;
+                    max-width: 100%;
+                    resize: none;
+                    padding: 0;
+                    margin: 0;
+                    height: 50px;
+                    appearance: none;
+                    position: relative;
+                    line-height: 50px;
+                    padding-right: 1em;
+                    &::-webkit-file-upload-button{
+                        display: none;
+                    }
+                    &::-webkit-input-placeholder{
+                        display: none;
+                    }
+                }
+                span{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    background-color: $primaryColor;
+                    border-radius: 0.5em 0 0 0.5em;
+                    padding: 0 0.5em;
+                    display: flex;
+                    align-items: center;
+                    pointer-events: none;
+                    svg{
+                        margin-right: 5px;
+                    }
+                }
+            }
+            .toggle{
+                height: 50px;
+                background-color: $backgroundColor;
+                input{
+                    padding: 0 !important;
+                    margin: 0 !important; 
+                    &:checked{
+                        & ~ label{
+                            background-color: $primaryColor;
+                        }
+                    }
+                }
+            }
+        }
+        form.financial-request{
+            
+            .dropdown{
+                padding: 0.5em 0;
+                button{
+                    margin: 0;
+                    width: 100%;
+                }
+                .dropdown-toggle{
+                    background-color: $backgroundColor;
+                    border: none;
+                }
+            }
+
+            .active-account{
+                background-color: $backgroundColor;
+                border-radius: 0.5em;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                .column{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    font-size: 14px;
+                }
+            }
+
+            button{
+                margin: 1em;
+                margin-right: auto;
+            }
+        }
         .table{
+            .custom-table{
+                min-width: 100%;
+                width: max-content;
+                @media screen and(max-width:500px) {
+                    width: 150%;
+                }
+
+                display: flex;
+                flex-direction: column;
+                justify-content: stretch;
+                
+                & > .th{
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    border-bottom: 2px solid #fff;
+                    padding-bottom: 1em;
+                    margin-bottom: 1em;
+                    .table-header{
+                        font-weight: bold;
+                    }
+                }
+                ul.table-body{
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 14px;
+                    li.table-row{
+                        display: flex;
+                        flex-wrap: wrap;
+                        text-align: center;
+                        border-bottom: 1px solid #fff4;
+                        margin-bottom: 1em;
+                        padding-bottom: 1em;
+                        &:last-of-type{
+                            margin: 0;
+                            padding: 0;
+                            border: none;
+                        }
+                        .btn{
+                            padding: 0.5em 0;
+                            margin-bottom: 0.5em;
+                        }
+                        .column{
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        .togglable{
+                            display: none;
+                            display: flex;
+                            flex-wrap: wrap;
+                            border: 2px solid #fff;
+                            border-radius: 0.5em;
+                            padding: 0.5em;
+                            margin-top: -4em;
+                            text-align: right;
+                            & > div{
+                                display: flex;
+                                align-items: center;
+                            }
+                            strong{
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+                }
+            }
             overflow: auto;
             @include scrollbar();
             border: 3px solid $primaryColor;
             border-radius: 1em;
             padding: 1em 1.5em;
             margin-top: 1em;
-            max-height: 400px;
+            max-height: 450px;
             
             table{
                 min-width: 100%;
@@ -479,8 +672,83 @@ main{
                 }
             }
         }
+        .pagination{
+            justify-content: center;
+            font-size: 14px;
+        }
+        .news{
+            padding: 1em;
+            ul{
+                max-height: 400px;
+                @include scrollbar();
+                overflow-y: auto;
+                li{
+                    .top{
+                        width: 100%;
+                        display: flex;
+                        .date{
+                            margin-right: auto;
+                        }
+                    }
+                    .content{
+                        @media screen and (max-width:500px) {
+                            font-size: 14px;
+                        }
+                        padding: 0.5em 1em;
+                        border: 2px solid $primaryColor;
+                        border-radius: 0.5em;
+                        background-color: $backgroundColor;
+                        margin: 1em;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                        span.time{
+                            opacity: 0.5;
+                        }
+                    }
+                    &.unread{
+                        .content{
+                            border-color: $warningColor;
+                            border-width: 3px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
+
+.w1{
+    width: 10%;
+}
+.w2{
+    width: 20%;
+}
+.w3{
+    width: 30%;
+}
+.w4{
+    width: 40%;
+}
+.w5{
+    width: 50%;
+}
+.w6{
+    width: 60%;
+}
+.w7{
+    width: 70%;
+}
+.w8{
+    width: 80%;
+}
+.w9{
+    width: 90%;
+}
+.w10{
+    width: 100%;
+}
+
 .text-wrap{
     word-wrap: break-word;
 }

@@ -29,6 +29,18 @@
     background-size: cover;
 }
 
+@mixin inputStyle($backColor,$padding:1em,$margin:0,$borderRadius:0.5em) {
+    appearance: none;
+    padding: $padding;
+    margin: $margin;
+    outline: none;
+    border: none;
+    background-color: $backColor;
+    font-family: 'vazir fd';
+    color: #fff;
+    border-radius: $borderRadius;
+}
+
 $backgroundColor:#081626;
 $sidebarBackgroundColor:#0D2540;
 $cardBackground:#0B1E33;
@@ -171,6 +183,9 @@ $warningColor:#52FF00;
     }
     &.alert-warning{
         border: 2px solid $warningColor;
+    }
+    &.alert-danger{
+        border: 2px solid $dangerColor;
     }
 }
 
@@ -330,5 +345,9 @@ input[type=radio].radio{
     &.badge-warning{
         background-color: $warningColor;
         color: #000;
+    }
+    &.badge-primary{
+        background-color: $primaryColor;
+        color: #fff;
     }
 }

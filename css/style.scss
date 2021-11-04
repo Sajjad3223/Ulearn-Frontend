@@ -18,6 +18,40 @@ body{
         flex-direction: column;
         align-items: center;
     }
+
+    &.not-found{
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        img.bg{
+            position: absolute;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+        .content{
+            margin-top: -5em;
+            width: 40vw;
+            display: flex;
+            flex-direction: column;
+            z-index: 999;
+            h4{
+                text-align: center;
+                color:#fff;
+                font-size: 34px;
+                font-family: 'montserrat';
+                direction: ltr
+            }
+            input{
+                @include inputStyle($cardBackground);
+            }
+            @media screen and (max-width:500px) {
+                width: 60vw;
+            }
+        }
+    }
 }
 
 div.sidebar{
@@ -871,8 +905,8 @@ main.content{
     background-color: $cardBackground;
     height: 60px;
     border-radius: 1em;
+    padding: 0 0.5em;
     div{
-        width: 100%;
         text-align: center;
         position: relative;
         label{

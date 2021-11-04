@@ -175,6 +175,10 @@
   border: 2px solid #52FF00;
 }
 
+.alert.alert-danger {
+  border: 2px solid #DB4646;
+}
+
 input[type=checkbox]:not(input#change-form) {
   position: relative;
   -webkit-appearance: none;
@@ -369,6 +373,11 @@ input[type=radio].radio:checked:before {
   color: #000;
 }
 
+.badge.badge-primary {
+  background-color: #6A62FE;
+  color: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -420,6 +429,63 @@ body::-webkit-scrollbar-thumb:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+}
+
+body.not-found {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+body.not-found img.bg {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+body.not-found .content {
+  margin-top: -5em;
+  width: 40vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 999;
+}
+
+body.not-found .content h4 {
+  text-align: center;
+  color: #fff;
+  font-size: 34px;
+  font-family: 'montserrat';
+  direction: ltr;
+}
+
+body.not-found .content input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 1em;
+  margin: 0;
+  outline: none;
+  border: none;
+  background-color: #0B1E33;
+  font-family: 'vazir fd';
+  color: #fff;
+  border-radius: 0.5em;
+}
+
+@media screen and (max-width: 500px) {
+  body.not-found .content {
+    width: 60vw;
   }
 }
 
@@ -1641,10 +1707,10 @@ main.content .courses .card .details a:last-child {
   background-color: #0B1E33;
   height: 60px;
   border-radius: 1em;
+  padding: 0 0.5em;
 }
 
 .toggle div {
-  width: 100%;
   text-align: center;
   position: relative;
 }
