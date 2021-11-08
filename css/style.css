@@ -665,6 +665,10 @@ header img {
   display: none;
 }
 
+header .actions {
+  margin-right: auto;
+}
+
 @media screen and (max-width: 600px) {
   header {
     -webkit-box-orient: vertical;
@@ -675,11 +679,11 @@ header img {
   header img {
     display: block;
   }
-  header div {
-    width: 100%;
+  header > div.actions {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     margin: 0.5em 0;
-  }
-  header div:last-child {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -687,8 +691,23 @@ header img {
         -ms-flex-align: end;
             align-items: flex-end;
   }
-  header div:last-child img {
+  header > div.actions img {
     width: 60%;
+  }
+}
+
+@media screen and (max-width: 600px) and (max-width: 600px) {
+  header > div.actions {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header > div.actions > div {
+    margin: 1em 0;
   }
 }
 
@@ -710,10 +729,11 @@ header div:last-child a:hover svg {
 }
 
 footer {
-  width: 90%;
+  width: 97%;
   border-radius: 1em;
   border: #4A71FC solid 5px;
-  margin: 1em 0;
+  margin: 1em auto;
+  margin-top: 10em;
   padding: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -721,8 +741,15 @@ footer {
   color: #fff;
 }
 
+@media screen and (max-width: 600px) {
+  footer {
+    margin-bottom: 3.5em;
+  }
+}
+
 @media screen and (max-width: 768px) {
   footer {
+    width: 90%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -751,6 +778,12 @@ footer .right .subscribe {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+@media screen and (max-width: 400px) {
+  footer .right .subscribe {
+    margin-bottom: 3em !important;
+  }
 }
 
 footer .right .subscribe input {
@@ -796,11 +829,20 @@ footer .right .subscribe button {
   left: 2em;
   cursor: pointer;
   font-family: 'vazir fd';
+  font-size: 12px;
 }
 
 @media screen and (max-width: 500px) {
   footer .right .subscribe button {
-    font-size: 12px;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  footer .right .subscribe button {
+    width: 80%;
+    -webkit-transform: translateY(3.5em);
+            transform: translateY(3.5em);
   }
 }
 
@@ -945,6 +987,12 @@ main.content div.banners {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  main.content div.banners {
+    display: none;
   }
 }
 
@@ -1101,6 +1149,7 @@ main.content div.banners .unrealBanner img.icon {
 main.content hr {
   width: 100%;
   opacity: 0.5;
+  margin: 1em 0;
 }
 
 main.content div.lastCourses {
@@ -1165,8 +1214,8 @@ main.content .courses {
   display: grid;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -ms-grid-columns: (minmax(270px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  -ms-grid-columns: (minmax(270px, 350px))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(270px, 350px));
   place-items: center;
 }
 
@@ -1175,7 +1224,9 @@ main.content .courses .card {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: 270px;
+  width: 30vw;
+  min-width: 270px;
+  max-width: 350px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1196,7 +1247,7 @@ main.content .courses .card {
 
 main.content .courses .card svg {
   opacity: 0.5;
-  max-width: 20px;
+  height: 20px;
 }
 
 main.content .courses .card:hover {
@@ -1361,7 +1412,10 @@ main.content .courses .card .details .courseDetails div {
             flex-direction: column;
   }
   main.content .courses .card .details .courseDetails div div {
-    margin: 0.2em 0;
+    margin: 0.5em 0;
+  }
+  main.content .courses .card .details .courseDetails div > svg {
+    margin-bottom: 0.5em;
   }
 }
 
@@ -1447,6 +1501,12 @@ main.content .courses .card .details a:last-child {
   position: relative;
   width: 40vw;
   height: 50px;
+}
+
+@media screen and (max-width: 550px) {
+  .searchbox {
+    width: 80vw;
+  }
 }
 
 .searchbox input {
@@ -1819,5 +1879,60 @@ main.content .courses .card .details a:last-child {
   margin: 1em 0;
   border-top: 1px dashed #fff;
   opacity: 0.5;
+}
+
+.master-profile {
+  color: #fff;
+}
+
+.master-profile .master-photo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.master-profile .master-photo img {
+  border-radius: 50%;
+  width: 200px;
+  margin: 1em auto;
+}
+
+.master-profile .master-photo div.students span {
+  font-size: 14px;
+  opacity: 0.5;
+}
+
+.master-profile .master-photo a.send-message {
+  width: 100%;
+  margin: 1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.master-profile .master-photo a.send-message svg {
+  margin-right: 0.5em;
+}
+
+.master-profile .master-description p {
+  margin-right: 1em;
+  font-size: 15px;
+}
+
+.master-profile hr {
+  margin: 1em 0;
 }
 /*# sourceMappingURL=style.css.map */

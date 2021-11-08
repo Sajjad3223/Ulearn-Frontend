@@ -176,6 +176,10 @@
   border: 2px solid #52FF00;
 }
 
+.alert.alert-danger {
+  border: 2px solid #DB4646;
+}
+
 input[type=checkbox]:not(input#change-form) {
   position: relative;
   -webkit-appearance: none;
@@ -368,6 +372,11 @@ input[type=radio].radio:checked:before {
 .badge.badge-warning {
   background-color: #52FF00;
   color: #000;
+}
+
+.badge.badge-primary {
+  background-color: #6A62FE;
+  color: #fff;
 }
 
 .container {
