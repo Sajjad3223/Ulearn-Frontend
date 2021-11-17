@@ -1,3 +1,6 @@
+
+@import 'fonts';
+
 @mixin scrollbar {
     /* width */
     &::-webkit-scrollbar {
@@ -36,7 +39,7 @@
     outline: none;
     border: none;
     background-color: $backColor;
-    font-family: 'vazir fd';
+    font-family: Vazir FD;
     color: #fff;
     border-radius: $borderRadius;
 }
@@ -64,7 +67,7 @@ $warningColor:#52FF00;
     position: relative;
     text-align: center;
     cursor: pointer;
-    font-family: 'vazir fd';
+    font-family: Vazir FD,arial,tahoma;
     font-weight: bold;
     &.btn-sm{
         font-size: 12px;
