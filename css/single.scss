@@ -1,5 +1,7 @@
 @import 'root';
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+
 html{
     scroll-behavior: smooth;
 }
@@ -46,7 +48,7 @@ body{
     .shortLink{
         
         margin-right: 1em;
-        font-family: 'Montserrat';
+        font-family: 'Noto Sans', sans-serif;
         @media screen and (max-width:500px){
             width:  100%;
             font-size: 14px;

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap");
 @font-face {
   font-family: Vazir FD;
   src: url("fonts/Farsi-Digits/Vazir-Regular-FD.eot") format("eot"), url("fonts/Farsi-Digits/Vazir-Regular-FD.woff2") format("woff2"), url("fonts/Farsi-Digits/Vazir-Regular-FD.woff") format("woff"), url("fonts/Farsi-Digits/Vazir-Regular-FD.ttf") format("truetype");
@@ -483,7 +484,7 @@ html {
 
 #shortLink .shortLink {
   margin-right: 1em;
-  font-family: 'Montserrat';
+  font-family: 'Noto Sans', sans-serif;
 }
 
 @media screen and (max-width: 500px) {
