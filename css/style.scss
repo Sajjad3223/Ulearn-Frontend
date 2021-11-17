@@ -58,6 +58,7 @@ div.sidebar{
     @media screen and(min-width:600px){
         width: 100px;
         height: 100%;
+        
     }
 
     display: flex;
@@ -163,6 +164,14 @@ div.sidebar{
                     }
                 }
             }
+            svg{
+                width: 24px;
+            }
+            @media screen and(min-width:600px){
+                svg{
+                    max-width: 20px !important;
+                }
+            }
         }
     }
 }
@@ -170,38 +179,26 @@ header{
     width: 95%;
     display: flex;
     align-items: center;
+    
     img{
         max-width: 100%;
         display: none;
-    }
-    .actions{
-        margin-right: auto;
     }
     @media screen and(max-width:600px){
         flex-direction: column-reverse;
         img{
             display: block;
         }
-        & > div.actions{
-            width: fit-content;
-            margin: 0.5em 0;
-            display: flex;
-            align-items: flex-end;
-            img{
-                width: 60%;
-            }
-            
-            @media screen and(max-width:600px){
-                flex-direction: column;
-                align-items: center;
-                & > div{
-                    margin: 1em 0;
-                }
-            }
-        }
     }
 
     div:last-child{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 2em;
+        img{
+            margin-bottom: 2em;
+        }
         a{
             text-decoration: none;
             margin: 0 1em;
@@ -370,10 +367,10 @@ main.content{
     display: flex;
     flex-direction: column;
     margin: 2em;
-    margin-right: 150px;
+    margin-right: 120px;
     width: 90% !important;
     @media screen and(max-width:600px){
-        margin: 2em !important;
+        margin: 1em !important;
         align-items: center;
     }
 

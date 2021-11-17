@@ -440,6 +440,15 @@ html {
   }
 }
 
+@media screen and (max-width: 400px) {
+  body {
+    width: 90vw;
+  }
+  body main.content {
+    width: 100%;
+  }
+}
+
 #shortLink {
   max-width: 95%;
   border: 2px solid #6A62FE;
@@ -449,6 +458,8 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -477,6 +488,7 @@ html {
 
 @media screen and (max-width: 500px) {
   #shortLink .shortLink {
+    width: 100%;
     font-size: 14px;
   }
 }
@@ -516,6 +528,12 @@ html {
   padding: 1em;
   border-radius: 1em;
   margin-bottom: 1em;
+}
+
+@media screen and (max-width: 400px) {
+  .course-content .row > div:last-child > div {
+    max-width: 300px;
+  }
 }
 
 .course-content .row > div:last-child > div .title {
@@ -818,6 +836,7 @@ a[href='#comments'] svg {
 
 .course-videos ul.videos {
   width: 100%;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -858,6 +877,8 @@ a[href='#comments'] svg {
   border-radius: 0.5em;
   padding: 0.5em;
   font-size: 14px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 @media screen and (max-width: 600px) {

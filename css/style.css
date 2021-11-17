@@ -693,6 +693,16 @@ div.sidebar nav a:not(a:first-child):hover span {
   }
 }
 
+div.sidebar nav a:not(a:first-child) svg {
+  width: 24px;
+}
+
+@media screen and (min-width: 600px) {
+  div.sidebar nav a:not(a:first-child) svg {
+    max-width: 20px !important;
+  }
+}
+
 header {
   width: 95%;
   display: -webkit-box;
@@ -708,10 +718,6 @@ header img {
   display: none;
 }
 
-header .actions {
-  margin-right: auto;
-}
-
 @media screen and (max-width: 600px) {
   header {
     -webkit-box-orient: vertical;
@@ -722,36 +728,22 @@ header .actions {
   header img {
     display: block;
   }
-  header > div.actions {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin: 0.5em 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-  }
-  header > div.actions img {
-    width: 60%;
-  }
 }
 
-@media screen and (max-width: 600px) and (max-width: 600px) {
-  header > div.actions {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  header > div.actions > div {
-    margin: 1em 0;
-  }
+header div:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 2em;
+}
+
+header div:last-child img {
+  margin-bottom: 2em;
 }
 
 header div:last-child a {
@@ -997,13 +989,13 @@ main.content {
       -ms-flex-direction: column;
           flex-direction: column;
   margin: 2em;
-  margin-right: 150px;
+  margin-right: 120px;
   width: 90% !important;
 }
 
 @media screen and (max-width: 600px) {
   main.content {
-    margin: 2em !important;
+    margin: 1em !important;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;

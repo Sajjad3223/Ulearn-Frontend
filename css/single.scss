@@ -14,6 +14,14 @@ html{
     }
 }
 
+body{
+    @media screen and (max-width:400px) {
+        width: 90vw;
+        main.content{
+            width: 100%;
+        }
+    }
+}
 
 #shortLink{
     max-width: 95%;
@@ -22,6 +30,7 @@ html{
     position: relative;
     height: 50px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     & > svg{
         margin-left: 0.5em;
@@ -35,9 +44,11 @@ html{
         }
     }
     .shortLink{
+        
         margin-right: 1em;
         font-family: 'Montserrat';
         @media screen and (max-width:500px){
+            width:  100%;
             font-size: 14px;
         }
     }
@@ -59,7 +70,6 @@ html{
         cursor: pointer;
     }
 }
-
 .course-content{
     .row{
         direction: ltr !important;
@@ -69,6 +79,9 @@ html{
                 & > div{
                     border: 5px solid $cardBackground;
                     padding: 1em;
+                    @media screen and (max-width:400px) {
+                        max-width: 300px;
+                    }
                     border-radius: 1em;
                     margin-bottom: 1em;
                     .title{
@@ -273,6 +286,7 @@ a[href='#comments']{
 .course-videos{
     ul.videos{
         width: 100%;
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
         list-style: none;
@@ -290,6 +304,7 @@ a[href='#comments']{
                 border-radius: 0.5em;
                 padding: 0.5em;
                 font-size: 14px;
+                flex-wrap: wrap;
                 @media screen and (max-width:600px){
                     font-size: 12px;
                 }
