@@ -11,7 +11,7 @@ body{
     inset: 0;
     direction: rtl;
     overflow-x: hidden;
-    font-family: 'vazir fd';
+    font-family: Vazir FD;
     display: flex;
     @include scrollbar();
     @media screen and(max-width:600px){
@@ -258,7 +258,7 @@ footer{
                 margin: 0 1em;
                 padding-right: 4em;
                 color: #fff;
-                font-family: 'vazir fd';
+                font-family: Vazir FD;
                 
                 &:focus{
                     box-shadow: 0 0 10px rgba(70, 70, 241, 0.3);
@@ -280,7 +280,7 @@ footer{
             button{
                 left: 2em;
                 cursor: pointer;
-                font-family: 'vazir fd';
+                font-family: Vazir FD;
                 font-size: 12px;
                 @media screen and (max-width:500px){
                     font-size: 10px;
@@ -776,7 +776,7 @@ main.content{
         padding: 1em;
         border-radius: 0.5em;
         color: #fff;
-        font-family: 'vazir fd';
+        font-family: Vazir FD;
         &:focus{
             box-shadow: 0 0 20px rgba(70, 70, 241, 0.3);
         }
@@ -858,7 +858,7 @@ main.content{
         padding-left: 4em;
         transition: border-radius 0.5s ease;
         margin: 0;
-        font-family: 'vazir fd';
+        font-family: Vazir FD;
         cursor: pointer;
 
         & ~ svg{
@@ -930,7 +930,7 @@ main.content{
     border: none;
     background-color: $sidebarBackgroundColor;
     padding: .5em;
-    font-family: 'vazir fd';
+    font-family: Vazir FD;
     color: #fff;
 }
 
