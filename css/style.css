@@ -1,3 +1,46 @@
+@font-face {
+  font-family: Vazir FD;
+  src: url("fonts/Farsi-Digits/Vazir-Regular-FD.eot") format("eot"), url("fonts/Farsi-Digits/Vazir-Regular-FD.woff2") format("woff2"), url("fonts/Farsi-Digits/Vazir-Regular-FD.woff") format("woff"), url("fonts/Farsi-Digits/Vazir-Regular-FD.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Vazir FD;
+  src: url("fonts/Farsi-Digits/Vazir-Bold-FD.eot") format("eot");
+  src: url("fonts/Farsi-Digits/Vazir-Bold-FD.woff2") format("woff2"), url("fonts/Farsi-Digits/Vazir-Bold-FD.woff") format("woff"), url("fonts/Farsi-Digits/Vazir-Bold-FD.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Vazir FD;
+  src: url("fonts/Farsi-Digits/Vazir-Black-FD.eot") format("eot"), url("fonts/Farsi-Digits/Vazir-Black-FD.woff2") format("woff2"), url("fonts/Farsi-Digits/Vazir-Black-FD.woff") format("woff"), url("fonts/Farsi-Digits/Vazir-Black-FD.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Vazir FD;
+  src: url("fonts/Farsi-Digits/Vazir-Medium-FD.eot") format("eot"), url("fonts/Farsi-Digits/Vazir-Medium-FD.woff2") format("woff2"), url("fonts/Farsi-Digits/Vazir-Medium-FD.woff") format("woff"), url("fonts/Farsi-Digits/Vazir-Medium-FD.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Vazir FD;
+  src: url("fonts/Farsi-Digits/Vazir-Light-FD.eot") format("eot"), url("fonts/Farsi-Digits/Vazir-Light-FD.woff2") format("woff2"), url("fonts/Farsi-Digits/Vazir-Light-FD.woff") format("woff"), url("fonts/Farsi-Digits/Vazir-Light-FD.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Vazir FD;
+  src: url("fonts/Farsi-Digits/Vazir-Thin-FD.eot") format("eot"), url("fonts/Farsi-Digits/Vazir-Thin-FD.woff2") format("woff2"), url("fonts/Farsi-Digits/Vazir-Thin-FD.woff") format("woff"), url("fonts/Farsi-Digits/Vazir-Thin-FD.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
 .btn {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -15,7 +58,7 @@
   position: relative;
   text-align: center;
   cursor: pointer;
-  font-family: 'vazir fd';
+  font-family: Vazir FD,arial,tahoma;
   font-weight: bold;
 }
 
@@ -390,7 +433,7 @@ body {
   inset: 0;
   direction: rtl;
   overflow-x: hidden;
-  font-family: 'vazir fd';
+  font-family: Vazir FD;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -478,7 +521,7 @@ body.not-found .content input {
   outline: none;
   border: none;
   background-color: #0B1E33;
-  font-family: 'vazir fd';
+  font-family: Vazir FD;
   color: #fff;
   border-radius: 0.5em;
 }
@@ -798,7 +841,7 @@ footer .right .subscribe input {
   margin: 0 1em;
   padding-right: 4em;
   color: #fff;
-  font-family: 'vazir fd';
+  font-family: Vazir FD;
 }
 
 footer .right .subscribe input:focus {
@@ -828,7 +871,7 @@ footer .right .subscribe svg {
 footer .right .subscribe button {
   left: 2em;
   cursor: pointer;
-  font-family: 'vazir fd';
+  font-family: Vazir FD;
   font-size: 12px;
 }
 
@@ -1520,7 +1563,7 @@ main.content .courses .card .details a:last-child {
   padding: 1em;
   border-radius: 0.5em;
   color: #fff;
-  font-family: 'vazir fd';
+  font-family: Vazir FD;
 }
 
 .searchbox input:focus {
@@ -1635,7 +1678,7 @@ main.content .courses .card .details a:last-child {
   -webkit-transition: border-radius 0.5s ease;
   transition: border-radius 0.5s ease;
   margin: 0;
-  font-family: 'vazir fd';
+  font-family: Vazir FD;
   cursor: pointer;
 }
 
@@ -1753,7 +1796,7 @@ main.content .courses .card .details a:last-child {
   border: none;
   background-color: #0D2540;
   padding: .5em;
-  font-family: 'vazir fd';
+  font-family: Vazir FD;
   color: #fff;
 }
 
