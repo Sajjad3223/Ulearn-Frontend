@@ -617,6 +617,13 @@ div.sidebar nav a:not(a:first-child) {
   position: relative;
 }
 
+@media screen and (max-width: 500px) {
+  div.sidebar nav a:not(a:first-child) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 div.sidebar nav a:not(a:first-child) span {
   width: 7em;
   text-align: center;
@@ -720,9 +727,9 @@ div.sidebar nav a:not(a:first-child) svg.filled {
   display: none;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 600px) {
   div.sidebar nav a:not(a:first-child) svg {
-    max-width: 20px !important;
+    max-width: 18px !important;
   }
 }
 
@@ -1992,5 +1999,356 @@ main.content .courses .card .details a:last-child {
 
 .master-profile hr {
   margin: 1em 0;
+}
+
+.course-comments {
+  border: 5px solid #0B1E33;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.course-comments .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.course-comments .title svg {
+  margin-left: 0.5em;
+}
+
+.course-comments .title div {
+  margin-right: auto;
+}
+
+.course-comments .not-authenticated {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0.5em;
+}
+
+@media screen and (max-width: 500px) {
+  .course-comments .not-authenticated {
+    font-size: 12px;
+  }
+  .course-comments .not-authenticated svg {
+    width: 15px;
+  }
+}
+
+.course-comments .not-authenticated svg {
+  margin-left: 0.5em;
+}
+
+.course-comments .add-comment {
+  width: 100%;
+}
+
+.course-comments .add-comment .replay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 400px) {
+  .course-comments .add-comment .replay {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.course-comments .add-comment .replay .replay-message {
+  background-color: #DB4646;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+.course-comments .add-comment .replay .replay-message svg {
+  min-width: 22px;
+  margin: 0.5em;
+}
+
+.course-comments .add-comment .replay .replay-message strong {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.course-comments .add-comment .replay .replay-message p {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.course-comments .add-comment form {
+  width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.course-comments .add-comment form > div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0.5em;
+}
+
+.course-comments .add-comment form > div:first-child {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.course-comments .add-comment form > div:first-child label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+  .course-comments .add-comment form > div:first-child label svg {
+    width: 15px;
+  }
+}
+
+.course-comments .add-comment form > div:first-child label svg {
+  margin-left: 0.5em;
+}
+
+.course-comments .add-comment form > div:first-child textarea {
+  padding: 1em;
+  color: #fff;
+  font-family: Vazir FD;
+  margin-top: 0.5em;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  outline: none;
+  background-color: #0B1E33;
+  border-radius: 1em;
+  resize: vertical;
+}
+
+@media screen and (max-width: 600px) {
+  .course-comments .add-comment form > div:last-child {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .course-comments .add-comment form > div:last-child div, .course-comments .add-comment form > div:last-child button {
+    width: 100% !important;
+    margin: 0.5em 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .course-comments .add-comment form > div:last-child div {
+    font-size: 12px;
+  }
+}
+
+.course-comments .add-comment form > div:last-child div {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.course-comments .add-comment form > div:last-child button {
+  width: 40%;
+  font-family: Vazir FD;
+}
+
+.course-comments hr {
+  margin: 0.5em 0;
+}
+
+.course-comments ul.comments {
+  margin: 0.5em;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 97%;
+}
+
+.course-comments ul.comments li.comment {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 0.5em;
+}
+
+.course-comments ul.comments li.comment div.commtent-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 2px solid #fff;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+@media screen and (max-width: 500px) {
+  .course-comments ul.comments li.comment div.commtent-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .course-comments ul.comments li.comment div.commtent-content {
+    padding: 0.5em;
+  }
+}
+
+.course-comments ul.comments li.comment div.commtent-content img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-left: 1em;
+}
+
+@media screen and (max-width: 500px) {
+  .course-comments ul.comments li.comment div.commtent-content img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.course-comments ul.comments li.comment div.commtent-content div.comment-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 0.5em;
+}
+
+@media screen and (max-width: 500px) {
+  .course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+.course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top div.send-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (max-width: 500px) {
+  .course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top div.send-info {
+    font-size: 14px;
+  }
+}
+
+.course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top div.actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top div.actions a {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  margin-right: 1em;
+}
+
+@media screen and (max-width: 400px) {
+  .course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top div.actions a {
+    margin-right: 0.5em;
+  }
+  .course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top div.actions a svg {
+    width: 15px;
+  }
+}
+
+.course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top div.actions a.replay-button {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-top div.actions a.replay-button svg {
+  margin-left: 5px;
+}
+
+.course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-body {
+  margin: 0.5em;
+}
+
+@media screen and (max-width: 500px) {
+  .course-comments ul.comments li.comment div.commtent-content div.comment-main div.comment-body {
+    font-size: 12px;
+  }
+}
+
+.course-comments ul.comments li.comment ul {
+  width: 90%;
+  margin: 0.5em auto 0.5em 0;
+}
+
+.course-comments ul.comments li.comment ul li div.commtent-content {
+  border-color: #31CF2E;
 }
 /*# sourceMappingURL=style.css.map */
