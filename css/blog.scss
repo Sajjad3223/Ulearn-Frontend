@@ -1,0 +1,130 @@
+@import 'root';
+
+.blog-content{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2em;
+    .title{
+        display: flex;
+        align-items: center;
+        span{
+            margin-right: 1em;
+        }
+    }
+    .posts-container{
+        form.posts-filter{
+            margin: 1em 0; 
+            & > *{
+                margin: 0.5em 0;
+            }
+            label{
+                color: #fff;
+            }
+            display: flex;
+            align-items: flex-end;
+            input{
+                @include inputStyle($cardBackground);
+                width: 100%;
+            }
+            .dropdown{
+                button{
+                    border-color: $primaryColor;
+                }
+                input{background-color: $backgroundColor;}
+            }
+            & > button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 50px;
+                svg{
+                    margin-right: 10px;
+                }
+            }
+        }
+        ul.posts{
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            justify-content: center;
+            li.post{
+                width: 320px;
+                background-color: $cardBackground;
+                border-radius: 1em;
+                position: relative;
+                margin: 1em;
+                transition: transform 0.5s;
+                &:hover{
+                    transform: translateY(-5px);
+                }
+                a.category{
+                    position: absolute;
+                    top: 8px;
+                    left: 8px;
+                    background-color: $backgroundColor;
+                    color: #fff;
+                    padding: 0.2em 0.5em;
+                    border-radius: 0.5em;
+                    font-size: 14px;
+                    text-decoration: none;
+                    transition: background-color 0.3s;
+                    &:hover{
+                        background-color: $primaryColor;
+                    }
+                }
+                img{
+                    width: 100%;
+                    border-radius: 1em 1em 0 0;
+                }
+                .content{
+                    margin: 1em;
+                    margin-top: 0.5em;
+                    .details{
+                        display: flex;
+                        align-items: center;
+                        & > div , .left > div{
+                            display: flex;
+                            align-items: center;
+                            width: fit-content;
+                            &.comments{
+                                margin-left: 0.5em;
+                            }
+                            svg{
+                                opacity: 0.5;
+                                margin-right: 0.5em;
+                            }
+                            span{
+                                color: #fff;
+                                font-size: 12px;
+                                transition: color 0.3s;
+                            }
+                            &.writer{
+                                a{
+                                    text-decoration: none;
+                                }
+                                svg{
+                                    margin-right: 0;
+                                    margin-left: 0.5em;
+                                }
+                                a:hover{
+                                    span{
+                                        color: $warningColor;
+                                    }
+                                }
+                            }
+                        }
+                        margin-bottom: 0.5em;
+                    }
+
+                    p{
+                        margin-top: 0.5em;
+                        color: #fff;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

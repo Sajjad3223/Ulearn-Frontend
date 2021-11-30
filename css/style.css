@@ -676,6 +676,18 @@ div.sidebar nav a:not(a:first-child).active {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+div.sidebar nav a:not(a:first-child).active svg {
+  opacity: 1;
+}
+
+div.sidebar nav a:not(a:first-child).active svg.stroked {
+  display: none;
+}
+
+div.sidebar nav a:not(a:first-child).active svg.filled {
+  display: block;
+}
+
 div.sidebar nav a:not(a:first-child):hover {
   background-color: rgba(0, 0, 0, 0.2);
 }
@@ -693,8 +705,19 @@ div.sidebar nav a:not(a:first-child):hover span {
   }
 }
 
+div.sidebar nav a:not(a:first-child):hover svg {
+  opacity: 0.8;
+}
+
 div.sidebar nav a:not(a:first-child) svg {
   width: 24px;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+div.sidebar nav a:not(a:first-child) svg.filled {
+  display: none;
 }
 
 @media screen and (min-width: 600px) {
