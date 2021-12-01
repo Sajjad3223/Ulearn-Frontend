@@ -69,6 +69,11 @@ $warningColor:#52FF00;
     cursor: pointer;
     font-family: Vazir FD,arial,tahoma;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    svg{
+        margin: 0 0.5em;
+    }
     &.btn-sm{
         font-size: 12px;
         padding: 0.3em;
@@ -126,6 +131,7 @@ $warningColor:#52FF00;
     &.btn-outline-warning{
         border: 2px solid $warningColor;
         border-radius: 0.5em;
+        background-color: transparent;
         &:hover{
             background-color: $warningColor ;
         }

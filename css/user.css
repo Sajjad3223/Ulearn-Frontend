@@ -61,6 +61,16 @@
   cursor: pointer;
   font-family: Vazir FD,arial,tahoma;
   font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn svg {
+  margin: 0 0.5em;
 }
 
 .btn.btn-sm {
@@ -140,6 +150,7 @@
 .btn.btn-outline-warning {
   border: 2px solid #52FF00;
   border-radius: 0.5em;
+  background-color: transparent;
 }
 
 .btn.btn-outline-warning:hover {
@@ -1248,6 +1259,9 @@ main .panel-details form.new-episode .fileupload input[type=file] {
   position: relative;
   line-height: 50px;
   padding-right: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
 }
 
 main .panel-details form.new-episode .fileupload input[type=file]::-webkit-file-upload-button {
@@ -1273,10 +1287,45 @@ main .panel-details form.new-episode .fileupload span {
       -ms-flex-align: center;
           align-items: center;
   pointer-events: none;
+  cursor: pointer;
 }
 
 main .panel-details form.new-episode .fileupload span svg {
   margin-right: 5px;
+}
+
+main .panel-details form.new-episode .selected-image {
+  background-color: #081626;
+  border-radius: 0.5em;
+}
+
+main .panel-details form.new-episode .category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
+}
+
+main .panel-details form.new-episode .category label {
+  margin-left: auto;
+}
+
+main .panel-details form.new-episode .category > div {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+}
+
+main .panel-details form.new-episode .category > div button {
+  margin: 0;
+  width: 100%;
+}
+
+main .panel-details form.new-episode .category > div svg {
+  left: 2em;
 }
 
 main .panel-details form.new-episode .toggle {
@@ -1291,6 +1340,13 @@ main .panel-details form.new-episode .toggle input {
 
 main .panel-details form.new-episode .toggle input:checked ~ label {
   background-color: #6A62FE;
+}
+
+main .panel-details form.new-episode .btns {
+  margin-right: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 main .panel-details form.financial-request .dropdown {

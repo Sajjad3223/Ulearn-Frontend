@@ -473,6 +473,8 @@ main{
                     position: relative;
                     line-height: 50px;
                     padding-right: 1em;
+                    box-sizing: border-box;
+                    cursor: pointer;
                     &::-webkit-file-upload-button{
                         display: none;
                     }
@@ -491,8 +493,32 @@ main{
                     display: flex;
                     align-items: center;
                     pointer-events: none;
+                    cursor: pointer;
                     svg{
                         margin-right: 5px;
+                    }
+                }
+            }
+            .selected-image{
+                background-color: $backgroundColor;
+                border-radius: 0.5em;
+            }
+            .category{
+                display: flex;
+                flex-direction: column !important;
+                label{
+                    margin-left: auto;
+                }
+                & > div{
+                    margin: 0;
+                    width: 100%;
+                    padding: 0;
+                    button{
+                        margin: 0;
+                        width: 100%;                        
+                    }
+                    svg{
+                        left: 2em;
                     }
                 }
             }
@@ -508,6 +534,10 @@ main{
                         }
                     }
                 }
+            }
+            .btns{
+                margin-right: auto;
+                width: fit-content;
             }
         }
         form.financial-request{
